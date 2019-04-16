@@ -19,6 +19,10 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: install bundler
+          command: gem install bundler:2.0.1
+
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "Gemfile.lock" }}
@@ -47,4 +51,3 @@ jobs:
           name: run tests
           command: |
             bundle exec rspec --format progress \
-            
