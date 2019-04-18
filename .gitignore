@@ -31,3 +31,4 @@ echo "coverage" >> .gitignore
 
 #Ignore .env setup for keys
 /.env
+coverage
