@@ -16,9 +16,9 @@
 
 FactoryBot.define do
   factory :item do
-    name { "MyString" }
-    description { "MyText" }
-    price { "9.99" }
+    name { Faker::Commerce.product_name }
+    description { Faker::Commerce.department }
+    price { Faker::Number.decimal(2) }
     discount { false }
     percentage_discount { 0 }
   end
