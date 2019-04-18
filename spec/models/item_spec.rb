@@ -25,7 +25,7 @@ RSpec.describe Item, type: :model do
     describe 'Database' do
       it { is_expected.to have_db_column(:created_at).of_type(:datetime).with_options(null: false) }
       it { is_expected.to have_db_column(:id).of_type(:integer).with_options(null: false) }
-      it { is_expected.to have_db_column(:price).of_type(:decimal) }
+      it { is_expected.to have_db_column(:price).of_type(:float) }
       it { is_expected.to have_db_column(:percentage_discount).of_type(:integer) }
       it { is_expected.to have_db_column(:name).of_type(:string) }
       it { is_expected.to have_db_column(:discount).of_type(:boolean) }
@@ -46,7 +46,7 @@ RSpec.describe Item, type: :model do
     end
 
     describe "#price" do
-      it { expect(item.price).to be_a(BigDecimal) }
+      it { expect(item.price).to be_a(Float) }
     end
 
     describe "#discount" do
