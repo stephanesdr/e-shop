@@ -26,8 +26,10 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-#Ensure that coverage results are not tracked by Git for simpleCov
-echo "coverage" >> .gitignore
-
 #Ignore .env setup for keys
-/.env
+.env
+
+#Ensure that coverage results are not tracked by Git for simpleCov
+coverage
+
+node_modules
