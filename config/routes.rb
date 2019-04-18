@@ -2,10 +2,12 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  root 'home/items#index'
+  root 'home/categories#index'
+
+  get '/landing', to: 'landing#landing_page'
 
   namespace 'home' do
-    get '/', to: 'items#index'
-    resources :items
+    get '/', to: 'categories#index'
+    resources :categories
   end
 end
