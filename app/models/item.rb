@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: items
@@ -13,7 +15,7 @@
 #
 
 class Item < ApplicationRecord
-  has_many :category_items#, dependent: :destroy
+  has_many :category_items, dependent: :destroy
   has_many :categories, through: :category_items
   validates :price, numericality: { only_float: true, greater_than_or_equal_to: 0 }
   validates :percentage_discount, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
