@@ -10,26 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_04_18_132424) do
-=======
 ActiveRecord::Schema.define(version: 2019_04_18_140518) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
-=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.float "price"
     t.boolean "discount", default: false
     t.integer "percentage_discount", default: 0
->>>>>>> master
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
