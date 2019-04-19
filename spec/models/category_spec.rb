@@ -19,7 +19,8 @@ RSpec.describe Category, type: :model do
     describe 'Database' do
       it { is_expected.to have_db_column(:id).of_type(:integer) }
       it { is_expected.to have_db_column(:name).of_type(:string).with_options(presence: true) }
-      # it { is_expected.to have_many :items }
+      it { is_expected.to have_many :category_items }
+      it { is_expected.to have_many :items }
     end
   end
 

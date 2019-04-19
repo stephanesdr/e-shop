@@ -27,6 +27,9 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_one :cart, dependent: :destroy
+  after_create :create_cart
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable
@@ -37,4 +40,8 @@ class User < ApplicationRecord
             format: {
               with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Email not valid"
             }
+  def create_cart
+    cart = Cart.create(user_id: id)
+    errors.add(:create_profile, "Problem at Cart creation") if cart.id.nil?
+  end
 end
