@@ -1,5 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root 'home/categories#index'
+
+  get '/landing', to: 'landing#landing_page'
+
+  namespace 'home' do
+    get '/', to: 'categories#index'
+    resources :categories
+  end
 end

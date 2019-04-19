@@ -31,5 +31,3 @@
 
 #Ensure that coverage results are not tracked by Git for simpleCov
 coverage
-
-node_modules
