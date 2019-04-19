@@ -27,8 +27,8 @@
 FactoryBot.define do
   factory :user do
     email { Faker::Internet.email }
-    password { "azerty" }
-    password_confirmation { "azerty" }
-    confirmed_at { Time.now.getlocal }
+    password { "password" }
+    password_confirmation { "password" }
+    confirmed_at { Time.zone.today }
   end
 end
