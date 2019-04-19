@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/support/controller_macros.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/support/controller_macros.rb": [
         null,
         null,
         1,
@@ -22,7 +22,7 @@
         null,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/support/factory_bot.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/support/factory_bot.rb": [
         null,
         null,
         1,
@@ -30,39 +30,7 @@
         1,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/controllers/category_items_controller_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/app/controllers/category_items_controller.rb": [
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/app/controllers/application_controller.rb": [
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/controllers/home_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/app/controllers/home_controller.rb": [
-        1,
-        null
-      ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/controllers/items_controller_spec.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/controllers/category_items_controller_spec.rb": [
         null,
         null,
         1,
@@ -71,32 +39,49 @@
         1,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/app/controllers/items_controller.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/app/controllers/category_items_controller.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/helpers/categories_helper_spec.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/app/controllers/application_controller.rb": [
         null,
         null,
         1,
+        null
+      ],
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/controllers/home_controller_spec.rb": [
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
         null,
         1,
         1,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/helpers/category_items_helper_spec.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/app/controllers/home_controller.rb": [
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/controllers/items_controller_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/app/controllers/items_controller.rb": [
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/helpers/categories_helper_spec.rb": [
         null,
         null,
         1,
@@ -115,24 +100,7 @@
         1,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/helpers/home_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/helpers/items_helper_spec.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/helpers/category_items_helper_spec.rb": [
         null,
         null,
         1,
@@ -151,7 +119,45 @@
         1,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/models/category_item_spec.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/helpers/home_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/helpers/items_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/models/category_item_spec.rb": [
         null,
         null,
         null,
@@ -201,7 +207,7 @@
         null,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/app/models/category_item.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/app/models/category_item.rb": [
         null,
         null,
         null,
@@ -230,7 +236,7 @@
         1,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/models/category_spec.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/models/category_spec.rb": [
         null,
         null,
         null,
@@ -263,7 +269,7 @@
         null,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/app/models/category.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/app/models/category.rb": [
         null,
         null,
         null,
@@ -283,7 +289,7 @@
         1,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/models/item_spec.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/models/item_spec.rb": [
         null,
         null,
         null,
@@ -345,7 +351,7 @@
         null,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/app/models/item.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/app/models/item.rb": [
         null,
         null,
         null,
@@ -369,7 +375,11 @@
         1,
         null
       ],
-      "/Users/alexdnz/Desktop/THPlive/e-shop/spec/models/user_spec.rb": [
+      "/Users/stephanestadler/CODE/THP-NEXT/project_01/spec/models/user_spec.rb": [
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -396,9 +406,26 @@
         null,
         1,
         1,
+        9,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
         null
       ]
     },
-    "timestamp": 1555669862
+    "timestamp": 1555689439
   }
 }
