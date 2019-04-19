@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/landing', to: 'landing#landing_page'
 
+  resources :profiles
+
   namespace 'home' do
     get '/', to: 'categories#index'
     resources :categories
