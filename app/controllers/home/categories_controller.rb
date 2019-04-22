@@ -2,6 +2,8 @@
 
 module Home
   class CategoriesController < HomeController
-    def index; end
+    def index
+      @user = User.all
+    end
   end
 end
