@@ -1,2 +1,8 @@
 @import "template/main";
 @import "font-awesome";
+@import "home.scss";
+
+
+.main {
+    width: -webkit-fill-available;
+}
