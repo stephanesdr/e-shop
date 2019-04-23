@@ -46,6 +46,9 @@
         <div class="collapse navbar-collapse" id="account">
             <ul class="navbar-nav ml-auto">
                </li>
+              <%= link_to "Profil", edit_user_registration_path, class: "nav-link" %>
+            </li>
+               </li>
               <%= link_to "Deconnexion", destroy_user_session_path, method: "delete", class: "nav-link" %>
             </li>
             </ul>
