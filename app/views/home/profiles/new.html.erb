@@ -1,0 +1,31 @@
+<h1>Create your profile</h1>
+
+<%= form_tag url_for(action: 'create'), multipart: true, method: "post" do %>
+
+
+
+        <%= label_tag 'First name' %><br>
+        <%= text_field_tag 'first_name', @first_name  %><br>
+
+        <%= label_tag 'Last name' %><br>
+        <%= text_field_tag 'last_name', @last_name  %><br>
+
+        <%= label_tag 'Phone number' %><br>
+        <%= text_field_tag 'phone_number', @phone_number  %><br>
+
+        <%= label_tag 'Address' %><br>
+        <%= label_tag 'Street' %><br>
+        <%= text_field_tag 'street', @street %><br>
+
+        <%= label_tag 'Postal Code' %><br>
+        <%= text_field_tag 'postal_code', @postal_code %><br>
+
+        <%= label_tag 'City' %><br>
+        <%= text_field_tag 'city', @city %><br>
+
+
+        <%= submit_tag "Create profile" %>
+
+  <% end %>
+
+  <%= link_to("Skip step", root_path) %>
