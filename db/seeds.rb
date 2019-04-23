@@ -45,10 +45,10 @@ require 'faker'
 #   p "ItemCategory #{i} : créé"
 # end
 #
-# 1.upto(10) do |i|
+# 1.upto(20) do |i|
 #   CartItem.create!(
 #     item_id: Item.all.sample.id,
-#     cart_id: Category.all.sample.id
+#     cart_id: Cart.all.sample.id
 #   )
 #   p "CartItem #{i} : créé"
 # end
