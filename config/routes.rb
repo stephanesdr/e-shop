@@ -12,4 +12,10 @@ Rails.application.routes.draw do
     get '/', to: 'categories#index'
     resources :categories
   end
+
+  namespace 'administration' do
+    get '/admin', to: 'items#index'
+
+    resources :items
+  end
 end
