@@ -31,3 +31,5 @@
 
 #Ensure that coverage results are not tracked by Git for simpleCov
 /coverage
+
+.DS_Store
