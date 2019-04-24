@@ -1,0 +1,13 @@
+<div class="container mb-2">
+      <br><br>
+      <h2 class="font-weight-bold"><%= @item.name %></h2>
+      <% if @item.discount == false %>
+      <h3 class="font-weight-light"><%= @item.price %>€</h3>
+      <% elsif @item.discount == true %>
+      <h3 class="font-weight-light"><del><%= @item.price %>€</del> <%= @item.reduced_price%> € (- <%= @item.percentage_discount %> %)</h3>
+      <% end %>
+      <p><strong>"<%= @item.description %>"</strong></p>
+      <br>
+      <%= link_to("Add to card", "#", class: "btn btn-primary") %>
+      <%= link_to("Back to index", root_path) %>
+</div>
