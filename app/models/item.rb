@@ -21,4 +21,8 @@ class Item < ApplicationRecord
   has_many :carts, through: :cart_items
   validates :price, numericality: { only_float: true, greater_than_or_equal_to: 0 }
   validates :percentage_discount, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
+
+  def reduced_price
+    (price - price * percentage_discount / 100).round(2)
+  end
 end

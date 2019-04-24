@@ -32,6 +32,14 @@ RSpec.describe Item, type: :model do
     end
   end
 
+  describe 'Reduced_Price' do
+    context 'when the item has a discount' do
+      let(:item) { build(:item, price: 100.00, percentage_discount: 10) }
+
+      it { expect(item.reduced_price).to eq(90.00) }
+    end
+  end
+
   it "has a valid factory" do
     expect(build(:item)).to be_valid
   end
