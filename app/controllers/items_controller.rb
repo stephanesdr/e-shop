@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ItemsController < ApplicationController
-  before_action :admin_authorization
+  # before_action :admin_authorization
   def index
     @items = Item.all
   end
@@ -19,5 +19,6 @@ class ItemsController < ApplicationController
 
   def admin_authorization
     redirect_to root_path unless current_user.admin
+    flash[:notice] = "Vous devez être connecté en tant qu'admin" unless current_user.admin
   end
 end
