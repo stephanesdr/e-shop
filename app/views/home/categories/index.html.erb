@@ -14,6 +14,7 @@
 									<th>Remise</th>
                   <th>Nouveau Prix</th>
 									<th>Description</th>
+									<th>Ajouter au panier</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -25,6 +26,7 @@
                   <td><%= item.percentage_discount%> %</td>
                   <td><%= item.reduced_price%> €</td>
                   <td><%= item.description%></td>
+									<td><%= link_to "Ajouter au panier", cart_item_path(item.id), :method => :patch%></td>
                 </tr>
                 <% end%>
 							</tbody>
