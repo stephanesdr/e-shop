@@ -1,0 +1,38 @@
+<nav class="sidebar sidebar-sticky">
+	<div class="sidebar-content">
+
+		<%= link_to root_path, class: "sidebar-brand" do %>
+		<% end %>
+
+		<ul class="list-group list-group-flush">
+
+			<li class="list-group-item list-group-item-action bg-light">
+		    <%= link_to administration_items_path, class: "nav-link active" do %>
+          <span class="align-middle">
+          	Orders
+          </span>
+        <% end %>
+			</li>
+
+			<li class="list-group-item list-group-item-action bg-light">
+					<span class="align-middle">
+						Products
+					</span>
+			</li>
+
+			<li class="list-group-item list-group-item-action bg-light">
+					<span class="align-middle">
+						Customers
+					</span>
+			</li>
+
+			<li class="list-group-item list-group-item-action bg-light">
+					<span class="align-middle">
+						Profiles
+					</span>
+			</li>
+
+		</ul>
+
+	</div>
+</nav>

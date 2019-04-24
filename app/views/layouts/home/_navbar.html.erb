@@ -45,12 +45,14 @@
     <% if current_user %>
         <div class="collapse navbar-collapse" id="account">
             <ul class="navbar-nav ml-auto">
-               </li>
-              <%= link_to "Profil", edit_user_registration_path, class: "nav-link" %>
-            </li>
-               </li>
-              <%= link_to "Deconnexion", destroy_user_session_path, method: "delete", class: "nav-link" %>
-            </li>
+              <% if current_user.admin %>
+              <li>
+                <%= link_to "Admin dashboard", administration_admin_path, class: "dropdown-item" %>
+              </li>
+              <% end %>
+              <li>
+                <%= link_to "Deconnexion", destroy_user_session_path, method: "delete", class: "nav-link" %>
+              </li>
             </ul>
         </div>
     <% else %>

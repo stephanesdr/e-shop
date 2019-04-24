@@ -1,0 +1,14 @@
+<%= form_for item, url: administration_item_url(item.id), html: {class: ""} do |f| %>
+	<tr>
+		<td> <%= item.id %></td>
+		<td> <%= item.name %></td>
+		<td> <%= item.price %></td>
+		<td>
+	  	<%= f.text_field :percentage_discount, value: item.percentage_discount, class: "form-control" %>
+		</td>
+		<td> <%= item.price %></td>
+		<td>
+			<%= f.submit "Update price", class: "btn btn-secondary"  %>
+		</td>
+	</tr>
+<% end %>

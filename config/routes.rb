@@ -15,4 +15,10 @@ Rails.application.routes.draw do
     resources :categories
     resources :profiles
   end
+
+  namespace 'administration' do
+    get '/admin', to: 'items#index'
+
+    resources :items
+  end
 end
