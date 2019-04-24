@@ -10,13 +10,13 @@
   width: -webkit-fill-available;
 }
 
-// FORM FOR DEVISE 
-  
+// FORM FOR DEVISE
+
   body, html {
       height: 100%;
       font-family: Poppins-Regular, sans-serif;
   }
-  
+
   a {
       font-family: Poppins-Regular;
       line-height: 1.9;
@@ -27,17 +27,17 @@
       -o-transition: all 0.4s;
       -moz-transition: all 0.4s;
   }
-  
+
   a:focus {
       outline: none !important;
   }
-  
+
   a:hover {
       text-decoration: none;
     color: #333333;
   }
-  
-  
+
+
   .field {
     display: flex;
     flex-flow: column;
@@ -46,10 +46,10 @@
   /**
   * Add a transition to the label and input.
   * I'm not even sure that touch-action: manipulation works on
-  * inputs, but hey, it's new and cool and could remove the 
+  * inputs, but hey, it's new and cool and could remove the
   * pesky delay.
   */
-  
+
   input {
     font-size: 1.5em;
     border: 0;
@@ -60,7 +60,7 @@
     cursor: text;
     text-align: center;
   }
-  
+
   input:focus {
     outline: 0;
     border-bottom: 1px solid #666;
@@ -72,15 +72,15 @@
     background: transparent;
     border-bottom: 1px solid black;
   }
-  
+
   button {
       outline: none !important;
       border: none;
       background: transparent;
   }
-  
 
-  
+
+
 .card-devise { min-width: 35vw; }
 .row-devise { height: 60vh; }
 p.subtitle-devise { font-size: x-small; color: #90c8c4; }
