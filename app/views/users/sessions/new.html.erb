@@ -1,0 +1,37 @@
+
+<div class="row row-devise align-items-center ">
+  <div class="text-center mx-auto">
+    <h2 class="my-5">Connexion</h2>
+
+      <div class="card card-devise p-5">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+         <div class="col-12 field pb-3">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
+        </div>
+        <div class="col-12 field pb-3">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "current-password"%>
+        </div>     
+        <div class="actionspb-3">
+          <%= f.submit "connexion", class:"btn btn-info btn-lg my-3" %>
+        </div>
+        <% if devise_mapping.rememberable? -%>
+          <div class="col-12">
+            <%= f.label :remember_me, class: "mr-2" %>
+            <%= f.check_box :remember_me %>
+          </div>
+        <% end -%>
+      <% end %>
+      </div>
+    
+    <div class="my-3">
+      <%= render "users/shared/links" %>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
