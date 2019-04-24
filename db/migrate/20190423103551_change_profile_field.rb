@@ -6,9 +6,9 @@ class ChangeProfileField < ActiveRecord::Migration[5.2]
       change_table :profiles, bulk: true do |t|
         dir.up do
           t.remove :delivery_address
-          t.column :street, :string, null: false
-          t.column :postal_code, :string, null: false
-          t.column :city, :string, null: false
+          t.column :street, :string
+          t.column :postal_code, :string
+          t.column :city, :string
         end
 
         dir.down do
