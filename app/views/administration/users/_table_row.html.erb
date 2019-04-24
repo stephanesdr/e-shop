@@ -3,5 +3,6 @@
 		<td> <%= user.id %></td>
 		<td> <%= user.email %></td>
 		<td> <%= user.admin %></td>
+		<td><a href="<%= edit_administration_user_path(user.id) %>" class="">Editer</a></td>
 	</tr>
 <% end %>
