@@ -1,0 +1,34 @@
+<main class="content">
+	<div class="container-fluid p-5">
+
+		<h1 class="h3 mb-3">Products</h1>
+
+		<div class="row">
+			<div class="col-12">
+
+				<div class="card">
+					<div class="table-responsive">
+						<table class="table table-striped table-hover">
+							<thead>
+								<tr>
+									<th>Id</th>
+									<th>Product</th>
+									<th>Initial price</th>
+									<th>Discount percentage</th>
+									<th>Final price</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% @items.order(:id).each do |item| %>
+									<%= render partial: "administration/items/table_row", locals: {item: item} %>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</main>
