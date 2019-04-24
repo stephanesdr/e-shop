@@ -19,7 +19,7 @@ require 'faker'
 #   p "User #{i} : créé"
 # end
 #
-# 1.upto(10) do |i|
+# 1.upto(30) do |i|
 #   Item.create!(
 #     price: Faker::Number.decimal(2),
 #     name: Faker::Commerce.unique.product_name,

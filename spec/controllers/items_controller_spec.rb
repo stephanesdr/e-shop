@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
-  # pending "add some examples to (or delete) #{__FILE__}"
+  login_admin
   describe 'get #index' do
     context 'with valid response from server' do
       before do
