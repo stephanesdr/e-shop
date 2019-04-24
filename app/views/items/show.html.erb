@@ -8,6 +8,6 @@
       <% end %>
       <p><strong>"<%= @item.description %>"</strong></p>
       <br>
-      <%= link_to("Add to card", "#", class: "btn btn-primary") %>
+      <%= link_to("Add to card", cart_item_path, class: "btn btn-primary", method: "PATCH") %>
       <%= link_to("Back to index", root_path) %>
 </div>
