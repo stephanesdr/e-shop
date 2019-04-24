@@ -1,6 +1,87 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "template/main";
 @import "font-awesome";
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.main {
+  width: -webkit-fill-available;
+}
+
+// FORM FOR DEVISE
+
+  body, html {
+      height: 100%;
+      font-family: Poppins-Regular, sans-serif;
+  }
+
+  a {
+      font-family: Poppins-Regular;
+      line-height: 1.9;
+      color: #666666;
+      margin: 0px;
+      transition: all 0.4s;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+  }
+
+  a:focus {
+      outline: none !important;
+  }
+
+  a:hover {
+      text-decoration: none;
+    color: #333333;
+  }
+
+
+  .field {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 1em;
+  }
+  /**
+  * Add a transition to the label and input.
+  * I'm not even sure that touch-action: manipulation works on
+  * inputs, but hey, it's new and cool and could remove the
+  * pesky delay.
+  */
+
+  input {
+    font-size: 1.5em;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    font-family: inherit;
+    border-radius: 0;
+    padding: 0;
+    cursor: text;
+    text-align: center;
+  }
+
+  input:focus {
+    outline: 0;
+    border-bottom: 1px solid #666;
+  }
+
+  .form-control {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+  }
+
+  button {
+      outline: none !important;
+      border: none;
+      background: transparent;
+  }
+
+
+
+.card-devise { min-width: 35vw; }
+.row-devise { height: 60vh; }
+p.subtitle-devise { font-size: x-small; color: #90c8c4; }
+a.subtitle-devise { font-size: small; color: #90c8c4; }

@@ -6,11 +6,14 @@ Rails.application.routes.draw do
 
   get '/landing', to: 'landing#landing_page'
 
-  resources :profiles
+  resources :carts, only: %i[index destroy]
+  resources :cart_items, only: %i[destroy]
+  resources :items, only: %i[index]
 
   namespace 'home' do
     get '/', to: 'categories#index'
     resources :categories
+    resources :profiles
   end
 
   namespace 'administration' do

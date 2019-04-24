@@ -4,14 +4,16 @@
 #
 # Table name: profiles
 #
-#  id               :bigint(8)        not null, primary key
-#  delivery_address :string           not null
-#  first_name       :string           not null
-#  last_name        :string           not null
-#  phone_number     :string           not null
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  user_id          :bigint(8)
+#  id           :bigint(8)        not null, primary key
+#  city         :string           not null
+#  first_name   :string           not null
+#  last_name    :string           not null
+#  phone_number :string           not null
+#  postal_code  :string           not null
+#  street       :string           not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  user_id      :bigint(8)
 #
 # Indexes
 #
@@ -33,7 +35,9 @@ RSpec.describe Profile, type: :model do
       it { is_expected.to have_db_column(:first_name).of_type(:string).with_options(presence: true) }
       it { is_expected.to have_db_column(:last_name).of_type(:string).with_options(presence: true) }
       it { is_expected.to have_db_column(:phone_number).of_type(:string).with_options(presence: true) }
-      it { is_expected.to have_db_column(:delivery_address).of_type(:string).with_options(presence: true) }
+      it { is_expected.to have_db_column(:street).of_type(:string).with_options(presence: true) }
+      it { is_expected.to have_db_column(:postal_code).of_type(:string).with_options(presence: true) }
+      it { is_expected.to have_db_column(:city).of_type(:string).with_options(presence: true) }
       it { is_expected.to belong_to :user }
     end
   end
