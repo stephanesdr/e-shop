@@ -21,4 +21,10 @@
 class Cart < ApplicationRecord
   belongs_to :user
   has_many :cart_items, dependent: :destroy
+
+  def sum_price
+    sum = 0
+    CartItem.where(cart_id: id).find_each { |cart_item| sum += cart_item.item.reduced_price }
+    sum
+  end
 end
