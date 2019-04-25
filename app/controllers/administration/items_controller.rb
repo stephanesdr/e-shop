@@ -3,7 +3,6 @@
 module Administration
   class ItemsController < AdministrationController
     # before_action :admin_authorization
-
     def show
       @item = Item.find(params[:id])
     end
@@ -19,14 +18,16 @@ module Administration
     def create
       @item = Item.create(name: params[:name], description: params[:description], percentage_discount: params[:percentage_discount], price: params[:price] )
       @item.percentage_discount.positive? ? @item.update(discount: true) : @item.update(discount: false)
-      @categories = Category.find(params[:category_ids])
-      @categories.each { |category| CategoryItem.create(item_id: @item.id, category_id: category.id) }
+      if !params[:category_ids].nil?
+        @categories = Category.find(params[:category_ids])
+        @categories.each { |category| CategoryItem.create(item_id: @item.id, category_id: category.id) } if !@categories.empty?
+      end
       if @item.errors.any?
         flash[:danger] = "Problème avec la création de l'item."
         redirect_to request.referer
       else
+        redirect_to administration_items_path
         flash[:notice] = "Item créé avec succès."
-        redirect_to items_path
       end
     end
 
