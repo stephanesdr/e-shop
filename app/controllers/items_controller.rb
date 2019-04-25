@@ -2,6 +2,11 @@
 
 class ItemsController < ApplicationController
   # before_action :admin_authorization
+
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def index
     @items = Item.all
   end

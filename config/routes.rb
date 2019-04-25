@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :carts, only: %i[index destroy]
   resources :cart_items, only: %i[update destroy]
-  resources :items, only: %i[index destroy]
+  resources :items, only: %i[index show destroy]
 
   namespace 'home' do
     get '/', to: 'categories#index'
