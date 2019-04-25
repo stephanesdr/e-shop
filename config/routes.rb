@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :items, only: %i[index destroy]
     end
     resources :profiles
+    resources :items, only: %i[index show]
   end
 
   namespace 'administration' do
