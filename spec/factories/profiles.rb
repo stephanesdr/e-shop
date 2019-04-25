@@ -5,12 +5,12 @@
 # Table name: profiles
 #
 #  id           :bigint(8)        not null, primary key
-#  city         :string           not null
-#  first_name   :string           not null
-#  last_name    :string           not null
-#  phone_number :string           not null
-#  postal_code  :string           not null
-#  street       :string           not null
+#  city         :string
+#  first_name   :string
+#  last_name    :string
+#  phone_number :string
+#  postal_code  :string
+#  street       :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  user_id      :bigint(8)

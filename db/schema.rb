@@ -57,15 +57,15 @@ ActiveRecord::Schema.define(version: 2019_04_23_103551) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "phone_number", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "street", null: false
-    t.string "postal_code", null: false
-    t.string "city", null: false
+    t.string "street"
+    t.string "postal_code"
+    t.string "city"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
