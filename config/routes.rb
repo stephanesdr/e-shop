@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   namespace 'administration' do
     get '/admin', to: 'items#index'
 
-    resources :items
+    resources :items, only: %i[index show update create new edit destroy]
     resources :users
   end
 end
