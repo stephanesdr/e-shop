@@ -1,44 +1,61 @@
-<div class="container" align="center">
-  <div class="col-md-6">
+<div class="container-fluid p-5">
+	<div class="row ml-3">
+		<div class="col-10 ml-5">
 
-<h2>Ajouter un nouvel article</h2>
+			<div class="card card-admin p-3 px-5 my-3">
 
-<%= form_tag url_for(action: 'create'), multipart: true, method: "post" do %>
+				<div class="card-title">
+					<p class="h2 text-primary font-weight-bold">Ajouter un nouvel article</p>
+				</div>
 
-   <div class="form-group">
-         <%= label_tag 'Nom' %>
-         <%= text_field_tag 'name', @name, class: "form-control "  %>
-   </div>
 
-   <div class="form-group">
-         <%= label_tag 'Description' %>
-         <%= text_area_tag 'description', @description, class: "form-control "  %>
-   </div>
+				<div class="card-body">
+					<%= form_tag url_for(action: 'create'), multipart: true, method: "post" do %>
 
-   <div class="form-group">
-         <%= label_tag 'Prix(€)' %>
-         <%= number_field_tag 'price', @price, :value => 0 ,  min:0 ,class: "form-control "  %>
-   </div>
+					<div class="form-group">
+						<%= label_tag 'Nom', nil, class:"h4 text-info" %>
+						<%= text_field_tag 'name', @name, class: "form-control "  %>
+					</div>
 
-  <div class="form-group">
-    Categories <br> <br>
-     <% @categories.each do |category| %>
-     <%= label_tag category.name %>
-     <%= check_box_tag "category_ids[]", category.id %>
-    <br>
-    <% end %>
-  </div>
+					<div class="form-group">
+						<%= label_tag 'Description', nil, class:"h4 text-info" %>
+						<%= text_area_tag 'description', @description, class: "form-control "  %>
+					</div>
 
-   <div class="form-group">
-     <%= label_tag 'Reduction(%)' %>
-     <%= number_field_tag 'percentage_discount', @percentage_discount, class: "form-control ",:value => 0 , min:0 %>
-   </div>
+					<div class="form-group">
+						<%= label_tag 'Prix(€)', nil, class:"h4 text-info" %>
+						<%= number_field_tag 'price', @price, :value => 0 ,  min:0 ,class: "form-control "  %>
+					</div>
 
-    <br>
-   <div class="form-group">
-         <%= submit_tag "Creer", class: 'btn btn-primary btn-submit' %>
-   </div>
-   <% end %>
+					<div class="form-group">
+						<div class="h4 text-info">
+							Categories
+						</div>
+						<div class="row flex-row d-flex text-center justify-content-between">
+							<% @categories.each do |category| %>
+							<div class="col">
+								<%= label_tag category.name %>
+								<%= check_box_tag "category_ids []", category.id %>
+							</div>
+							<% end %>
+						</div>
+					</div>
 
-</div>
+					<div class="form-group">
+						<%= label_tag 'Reduction(%)', nil, class:"h4 text-info" %>
+						<%= number_field_tag 'percentage_discount', @percentage_discount, class: "form-control ",:value => 0 , min:0 %>
+					</div>
+
+					<br>
+					<div class="form-group">
+						<%= submit_tag "Creer", class: 'btn btn-lg btn-warning btn-submit' %>
+					</div>
+					<% end %>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
 </div>
