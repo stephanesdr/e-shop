@@ -41,6 +41,32 @@ module Administration
       redirect_to request.referer
     end
 
+    def edit
+      @categories = Category.all
+      @item = Item.find(params["id"])
+    end
+
+    def update
+      @item = Item.find(params["id"])
+
+      @item.update(name: params[:item][:name], description: params[:item][:description], price: params[:item][:price], percentage_discount: params[:item][:percentage_discount])
+      @item.percentage_discount.positive? ? @item.update(discount: true) : @item.update(discount: false)
+
+      CategoryItem.where(item_id: @item.id).each { |category_item| CategoryItem.delete(category_item) }
+      if !params[:category_ids].nil?
+        @categories = Category.find(params[:category_ids])
+        @categories.each { |category| CategoryItem.create(item_id: @item.id, category_id: category.id) } if !@categories.empty?
+      end
+
+      if @item.errors.any?
+        flash[:danger] = "L'édition d'annonce n'a pas fonctionné."
+        redirect_to request.referer
+      else
+        flash[:notice] = "Votre évènement a bien été édité."
+        redirect_to administration_items_path
+      end
+    end
+
     private
 
     def admin_authorization

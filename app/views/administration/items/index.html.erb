@@ -24,7 +24,7 @@
 								</tr>
 							</thead>
 							<tbody>
-                <%@items.each do |item| %>
+                <%@items.order("id ASC").each do |item| %>
                 <tr>
 									<td><%= item.id%></td>
                   <td><%= link_to(item.name, home_item_path(item.id)) %></td>
@@ -37,7 +37,7 @@
 											<%=cat.name %>
 											<%end%>
 									</td>
-									<td><%= link_to "EDITER" %></td>
+									<td><%= link_to "EDITER" , edit_administration_item_path(item.id) %></td>
 									<td><%= link_to "DELETE", administration_item_path(item.id), :method => :delete,  data: { confirm: 'Are you sure you want to delete this item from your stock ?' } %></td>
                 </tr>
                 <% end%>
