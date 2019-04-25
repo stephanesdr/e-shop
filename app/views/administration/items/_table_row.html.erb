@@ -6,11 +6,11 @@
 						<th>ID</th>
 						<th>Produit</th>
 						<th>Prix de départ</th>
-						<th>Reduction</th>
+						<th>Réduction</th>
 						<th>Remise</th>
 						<th>Nouveau Prix</th>
 						<th>Description</th>
-						<th>Categories</th>
+						<th>Catégories</th>
 						<th>Edition</th>
 						<th>Supression</th>
 					</tr>
@@ -30,7 +30,7 @@
 							<%end%>
 						</td>
 						<td><%= link_to "EDITER" %></td>
-						<td><%= link_to "DELETE", administration_item_path(item.id), :method => :delete,  data: { confirm: 'Are you sure you want to delete this item from your stock ?' } %>
+						<td><%= link_to "SUPPRIMER", administration_item_path(item.id), :method => :delete,  data: { confirm: 'Etes-vous sûr de vouloir supprimer ce produit de votre stock ?' } %>
 						</td>
 					</tr>
 					<% end%>
