@@ -8,15 +8,13 @@ Rails.application.routes.draw do
 
   resources :carts, only: %i[index destroy]
   resources :cart_items, only: %i[update destroy]
-  # resources :items, only: %i[index show new create destroy]
-
-  namespace 'administration' do
-    resources :items, only: %i[index show new create destroy]
-  end
 
   namespace 'home' do
     get '/', to: 'categories#index'
-    resources :categories
+    resources :items, only: %i[show]
+    resources :categories do
+      resources :items, only: %i[index destroy]
+    end
     resources :profiles
     resources :items, only: %i[index show]
   end
