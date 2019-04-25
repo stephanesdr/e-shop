@@ -1,7 +1,7 @@
 <div class="container" align="center">
   <div class="col-md-6">
 
-<h2>Ajouter un nouvel article</h2>
+<h2 class="mt-5">Ajouter un nouvel article</h2>
 
 <%= form_tag url_for(action: 'create'), multipart: true, method: "post" do %>
 
@@ -33,6 +33,8 @@
      <%= label_tag 'Reduction(%)' %>
      <%= number_field_tag 'percentage_discount', @percentage_discount, class: "form-control ",:value => 0 , min:0 %>
    </div>
+
+<%= file_field_tag :picture %>
 
     <br>
    <div class="form-group">
