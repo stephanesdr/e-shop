@@ -11,13 +11,13 @@
 						<table class="table table-striped table-hover">
 							<thead>
 								<tr>
-								   <th>Produit</th>
+								  <th>Produit</th>
 									<th>Prix de départ</th>
                   <th>Reduction</th>
 									<th>Remise</th>
                   <th>Nouveau Prix</th>
 									<th>Description</th>
-                  <th>Supression</th>
+									<th>Categories</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -29,7 +29,11 @@
                   <td><%= item.percentage_discount%> %</td>
                   <td><%= item.reduced_price%> €</td>
                   <td><%= item.description%></td>
-                  <td><%= link_to "Supprimer"%></td>
+									<td><% item.categories.each do|cat| %>
+											<%=cat.name %>
+											<%end%>
+									</td>
+
                 </tr>
                 <% end%>
 							</tbody>
@@ -38,7 +42,6 @@
 					</div>
 				</div>
         <br>
-        <%= link_to "Ajouter une item"%>
 			</div>
 		</div>
 
