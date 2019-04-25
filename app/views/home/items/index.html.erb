@@ -23,7 +23,7 @@
 							<tbody>
                 <%@items.each do |item| %>
                 <tr>
-                  <td><%= link_to(item.name, item_path(item.id)) %></td>
+                  <td><%= link_to(item.name, home_item_path(item.id)) %></td>
                   <td><%= item.price%> €</td>
                   <td><%= item.discount ? "Oui" : "Non" %></td>
                   <td><%= item.percentage_discount%> %</td>
