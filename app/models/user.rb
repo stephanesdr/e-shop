@@ -29,6 +29,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_one :cart, dependent: :destroy
   has_one :profile, dependent: :destroy
+  has_many :orders, dependent: :destroy
   after_create :create_cart_and_profile
 
   devise :database_authenticatable, :registerable,
