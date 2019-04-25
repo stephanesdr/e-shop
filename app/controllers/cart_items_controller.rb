@@ -3,7 +3,7 @@
 class CartItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
-    CartItem.create(cart_id: current_user.id, item_id: @item.id)
+    CartItem.create(cart_id: current_user.cart.id, item_id: @item.id)
     flash[:notice] = "#{@item.name} a été ajouté au panier"
   end
 
