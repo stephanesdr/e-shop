@@ -17,18 +17,17 @@
 
    <div class="form-group">
          <%= label_tag 'Prix(€)' %>
-         <%= number_field_tag 'price', @price, :value => 0 ,class: "form-control "  %>
+         <%= number_field_tag 'price', @price, :value => 0 ,  min:0 ,class: "form-control "  %>
    </div>
 
-
-<div class="form-group">
-  Categories <br> <br>
-   <% @categories.each do |category| %>
-   <%= label_tag category.name %>
-   <%= check_box_tag "category_ids[]", category.id %>
-  <br>
-  <% end %>
-</div>
+  <div class="form-group">
+    Categories <br> <br>
+     <% @categories.each do |category| %>
+     <%= label_tag category.name %>
+     <%= check_box_tag "category_ids[]", category.id %>
+    <br>
+    <% end %>
+  </div>
 
    <div class="form-group">
      <%= label_tag 'Reduction(%)' %>
