@@ -23,6 +23,7 @@ class Item < ApplicationRecord
   has_many :orders, through: :item_orders
   validates :price, numericality: { only_float: true, greater_than_or_equal_to: 0 }
   validates :percentage_discount, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
+  has_one_attached :picture
 
   def reduced_price
     (price - price * percentage_discount / 100).round(2)
