@@ -11,9 +11,12 @@ module Administration
     def edit; end
 
     def update
-      return unless @user.update(user_params)
-
-      redirect_to administration_users_path, success: "User update successfully"
+      if @user.update(user_params)
+        flash[:notice] = "User updated successfully"
+      else
+        flash[:danger] = "User update abort"
+      end
+      redirect_to administration_users_path
     end
 
     private
