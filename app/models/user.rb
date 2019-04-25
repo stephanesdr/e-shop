@@ -29,7 +29,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_one :cart, dependent: :destroy
   has_one :profile, dependent: :destroy
-  after_create :create_cart
+  after_create :create_cart_and_profile
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
@@ -41,7 +41,8 @@ class User < ApplicationRecord
             format: {
               with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Email not valid"
             }
-  def create_cart
+  def create_cart_and_profile
+    Profile.create(user_id: id)
     cart = Cart.create(user_id: id)
     errors.add(:create_profile, "Problem at Cart creation") if cart.id.nil?
   end
