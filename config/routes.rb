@@ -23,5 +23,6 @@ Rails.application.routes.draw do
     get '/admin', to: 'items#index'
 
     resources :items
+    resources :users
   end
 end
