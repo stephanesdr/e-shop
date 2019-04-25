@@ -18,7 +18,7 @@ require 'faker'
 #   )
 #   p "User #{i} : créé"
 # end
-
+#
 # 1.upto(10) do |i|
 #   Item.create!(
 #     price: Faker::Number.decimal(2),
