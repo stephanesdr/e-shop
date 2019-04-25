@@ -11,7 +11,9 @@ module Administration
     def edit; end
 
     def update
-      @user = User.update(user_params)
+      return unless @user.update(user_params)
+
+      redirect_to administration_users_path, success: "User update successfully"
     end
 
     private
