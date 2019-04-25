@@ -1,14 +1,17 @@
-<h1>Welcome in your profile <%= current_user.profile.first_name%></h1>
+<div class="row my-5">
+    <h1>Votre profil </h1>
 
-<div class="card">
-    <div class="card-title">    
-        title
+    <div class="card">
+    <div class="card-title">
+    title
     </div>
     <div class="card-body">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-        </ul>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> <%= @profile.first_name %> </li>
+        <li class="list-group-item"> <%= @profile.last_name %> </li>
+        <li class="list-group-item"> <%= @profile.phone_number %> </li>
+        <li class="list-group-item"> <%= @profile.delivery_address %> </li>
+      </ul>
+    </div>
     </div>
 </div>

@@ -10,6 +10,10 @@ module Home
       @profile = Profile.new
     end
 
+    def show
+      @profile = Profile.find(params[:id])
+    end
+
     def create
       @profile = Profile.new(first_name: params['first_name'], last_name: params['last_name'], phone_number: params['phone_number'], street: params['street'], postal_code: params['postal_code'], city: params['city'])
       @profile.user = current_user
