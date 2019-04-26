@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-# RSpec.describe ItemsController, type: :controller do
+# RSpec.describe Home::ItemsController, type: :controller do
 #   login_admin
 #   describe 'get #index' do
 #     context 'with valid response from server' do
