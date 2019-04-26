@@ -1,3 +1,28 @@
-// Place all the styles related to the administration controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "template/main";
+@import "font-awesome";
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.main {
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+}
+
+.table-responsive {
+    display: table;
+}
+
+.card-admin {
+    box-shadow: 10px 10px 0px 0px #127ba3;
+}
+
+.sidebar {
+    width: 17vw;
+    position: fixed;
+    margin-top: 18px;
+}
