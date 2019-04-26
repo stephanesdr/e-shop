@@ -43,8 +43,26 @@
   <%= link_to "Back", root_path %>
   </div>
   <h3>Somme : <%=@cart.sum_price%> €</h3>
-  <h3><%= link_to "Passer la commande", home_orders_path, method: "post" %></h3>
+
+
+
+<%= form_tag home_orders_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description= <%=Time.now %>
+          data-amount=  <%=@amount%>
+          data-locale= "auto"
+          data-currency= "eur"
+          data-email = <%=@user.email%> > </script>
+  <%end %>
+
 </div>
-
-
 </div>
