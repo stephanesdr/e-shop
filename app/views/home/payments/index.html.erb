@@ -42,8 +42,8 @@
   <% end %>
   <%= link_to "Back", root_path %>
   </div>
-
-  <h3><%= link_to "Passer la commande", orders_path, method: "post" %></h3>
+  <h3>Somme : <%=@cart.sum_price%> €</h3>
+  <h3><%= link_to "Passer la commande", home_orders_path, method: "post" %></h3>
 </div>
 
 
