@@ -15,5 +15,6 @@
           data-description= <%="Commande #{Time.now}" %>
           data-amount=  <%=@amount%>
           data-locale= "auto"
-        data-currency= "eur"> </script>
+          data-currency= "eur"
+          data-email = <%=@user.email%> > </script>
 <% end %>

@@ -10,6 +10,7 @@ module Home
     end
 
     def new
+      @user = current_user
       @cart = current_user.cart
       @amount = @cart.sum_price * 100
     end
