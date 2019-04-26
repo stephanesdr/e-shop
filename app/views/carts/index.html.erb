@@ -11,3 +11,8 @@
 <% end %>
 
 <h3>Somme : <%=@cart.sum_price%> €</h3>
+
+<br>
+<% if !@cart.items.empty? %>
+<h3><%= link_to "Passer la commande", orders_path, method: "post" %></h3>
+<% end%>

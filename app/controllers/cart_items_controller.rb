@@ -4,6 +4,7 @@ class CartItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     CartItem.create(cart_id: current_user.cart.id, item_id: @item.id)
+    redirect_to request.referer
     flash[:notice] = "#{@item.name} a été ajouté au panier"
   end
 

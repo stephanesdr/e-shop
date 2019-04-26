@@ -18,6 +18,7 @@
                   <th>Nouveau Prix</th>
 									<th>Description</th>
 									<th>Categories</th>
+									<th>Ajouter au panier</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -33,6 +34,7 @@
 											<%=cat.name %>
 											<%end%>
 									</td>
+									<td><%= link_to "Ajouter au panier", cart_item_path(item.id), method: "patch"%></td>
 
                 </tr>
                 <% end%>
