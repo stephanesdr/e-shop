@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
     resources :profiles
     resources :items, only: %i[index show]
+    resources :payments, only: %i[index]
   end
 
   namespace 'administration' do
