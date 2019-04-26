@@ -18,4 +18,8 @@
 //= require template/forms
 //= require template/maps
 //= require template/tables
+//= require admin
 //= require_tree .
+
+
+
