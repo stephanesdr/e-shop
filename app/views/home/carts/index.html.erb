@@ -14,5 +14,5 @@
 
 <br>
 <% if !@cart.items.empty? %>
-<h3><%= link_to "Passer la commande", home_orders_path, method: "post" %></h3>
+<h3><%= link_to "Passer la commande", new_home_order_path, method: "get" %></h3>
 <% end%>

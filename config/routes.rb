@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
     resources :carts, only: %i[index destroy]
     resources :cart_items, only: %i[update destroy]
-    resources :orders, only: %i[create]
+    resources :orders, only: %i[create new]
 
     resources :categories do
       resources :items, only: %i[index destroy]
