@@ -19,3 +19,9 @@
 //= require template/maps
 //= require template/tables
 //= require_tree .
+
+$(function() {
+  setTimeout(function(){
+    $('.alert').slideUp(500);
+  }, 1000);
+});
