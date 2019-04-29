@@ -17,6 +17,7 @@ module Administration
 
     def create
       @item = Item.create(name: params[:name], description: params[:description], percentage_discount: params[:percentage_discount], price: params[:price] )
+      @item.picture.attach(params[:picture])
       @item.percentage_discount.positive? ? @item.update(discount: true) : @item.update(discount: false)
       if !params[:category_ids].nil?
         @categories = Category.find(params[:category_ids])
@@ -35,7 +36,7 @@ module Administration
       @item = Item.find(params[:id])
       CartItem.where(item_id: @item.id).each { |cart_item| CartItem.delete(cart_item) }
       CategoryItem.where(item_id: @item.id).each { |category_item| CategoryItem.delete(category_item) }
-      # OrderItem.where(item_id: @item.id).each {|order_item| OrderItem.delete(order_item) }
+      ItemOrder.where(item_id: @item.id).each { |order_item| ItemOrder.delete(order_item) }
       Item.delete(@item)
       redirect_to request.referer
     end

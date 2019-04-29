@@ -2,6 +2,6 @@
 
 require 'rails_helper'
 
-RSpec.describe CartItemsController, type: :controller do
+RSpec.describe Home::CategoryItemsController, type: :controller do
   pending "add some examples to (or delete) #{__FILE__}"
 end

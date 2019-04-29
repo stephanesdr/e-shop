@@ -29,7 +29,7 @@
 							<%=cat.name %>
 							<%end%>
 						</td>
-						<td><%= link_to "EDITER" %></td>
+						<td><%= link_to "EDITER", edit_administration_item_path(item.id) %></td>
 						<td><%= link_to "SUPPRIMER", administration_item_path(item.id), :method => :delete,  data: { confirm: 'Etes-vous sûr de vouloir supprimer ce produit de votre stock ?' } %>
 						</td>
 					</tr>

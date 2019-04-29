@@ -12,6 +12,11 @@
 				<div class="card-body">
 					<%= form_tag url_for(action: 'create'), multipart: true, method: "post" do %>
 
+          <div class="form-group">
+            <%= label_tag 'Image', nil, class:"h4 text-info" %>
+            <%= file_field_tag :picture %>
+          </div>
+
 					<div class="form-group">
 						<%= label_tag 'Nom', nil, class:"h4 text-info" %>
 						<%= text_field_tag 'name', @name, class: "form-control "  %>

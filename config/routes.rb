@@ -6,17 +6,24 @@ Rails.application.routes.draw do
 
   get '/landing', to: 'landing#landing_page'
 
-  resources :carts, only: %i[index destroy]
-  resources :cart_items, only: %i[update destroy]
+  # resources :carts, only: %i[index destroy]
+  # resources :cart_items, only: %i[update destroy]
+  # resources :orders, only: %i[create]
 
   namespace 'home' do
     get '/', to: 'categories#index'
-    resources :items, only: %i[show]
+
+    resources :carts, only: %i[index destroy]
+    resources :cart_items, only: %i[update destroy]
+    resources :orders, only: %i[create new]
+
     resources :categories do
       resources :items, only: %i[index destroy]
     end
+
     resources :profiles
     resources :items, only: %i[index show]
+    resources :payments, only: %i[index]
   end
 
   namespace 'administration' do
