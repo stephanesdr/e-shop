@@ -1,5 +1,12 @@
 <div class="container mb-2">
       <br><br>
+      <div class="row">
+        <div class="col-md-6">
+          <%if @item.picture.attached?%>
+          <%= image_tag @item.picture, alt: 'picture', class: 'picture' %>
+          <% end %>
+        </div>
+        <div class="col-md-6">
       <h2 class="font-weight-bold"><%= @item.name %></h2>
       <% if @item.discount == false %>
       <h3 class="font-weight-light"><%= @item.price %>€</h3>
@@ -8,6 +15,8 @@
       <% end %>
       <p><strong>"<%= @item.description %>"</strong></p>
       <br>
-      <%= link_to("Add to card", cart_item_path, class: "btn btn-primary", method: "PATCH") %>
+      <%= link_to("Add to card", home_cart_item_path, class: "btn btn-primary", method: "PATCH") %>
       <%= link_to("Back to index", root_path) %>
+      </div>
+      </div>
 </div>
