@@ -17,7 +17,7 @@
         <%@orders.order('id ASC').each do |order| %>
         <tr>
           <td>
-            <%= link_to order.id ,home_order_path(order.id)%>
+            <%= link_to order.id ,administration_order_path(order.id)%>
           </td>
           <td><%= order.created_at.asctime%></td>
           <td><%= order.stripe_customer_id %></td>
