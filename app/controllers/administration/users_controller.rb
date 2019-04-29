@@ -27,7 +27,11 @@ module Administration
         Order.delete(order)
       end
       Profile.delete(@user.profile)
-      User.delete(@user)
+      if User.delete(@user)
+        flash[:notice] = "User deleted successfully"
+      else
+        flash[:danger] = "User delete abort"
+      end
       redirect_to request.referer
     end
 
