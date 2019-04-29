@@ -9,6 +9,7 @@
           <th>Articles</th>
           <th>Total</th>
           <th>Etiquette</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +25,7 @@
           </td>
           <td><%= order.items.sum("price")%> € </td>
           <td><%= link_to "Etiquette" %> </td>
+          <td>NIL</td>
         </tr>
         <% end%>
       </tbody>
