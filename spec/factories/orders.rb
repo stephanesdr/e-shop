@@ -5,6 +5,7 @@
 # Table name: orders
 #
 #  id                 :bigint(8)        not null, primary key
+#  status             :integer          default("initiated")
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  stripe_customer_id :string
