@@ -1,0 +1,6 @@
+<%=@order.id%><br>
+<%=@order.created_at.asctime%><br>
+<%@order.items.each do |itm|%>
+  <%=itm.name%><br>
+<%end%>
+<%= @order.items.sum("price")%> € <br>
