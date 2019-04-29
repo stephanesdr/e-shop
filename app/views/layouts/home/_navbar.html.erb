@@ -51,6 +51,11 @@ Other
 </li>
 <% end %>
 <li>
+  <% if current_user.cart.items.count > 0 %>
+    <%= link_to "Panier", home_carts_path(current_user.id), class: "nav-link" %>
+  <% end %>
+</li>
+<li>
 <%= link_to "Profil", home_profile_path(current_user.id), class: "nav-link" %>
 </li>
 <li>
