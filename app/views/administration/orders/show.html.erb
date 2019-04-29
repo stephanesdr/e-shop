@@ -1,7 +1,36 @@
-<%=@order.id%><br>
-<%=@order.created_at.asctime%><br>
-<%=@order.status%><br>
-<%@order.items.each do |itm|%>
-  <%=itm.name%><br>
-<%end%>
-<%= @order.items.sum("price")%> € <br>
+
+
+
+<div class="container p-5">
+  <div class="row ml-3">
+
+    <div class="col-12 ml-5">
+      <p class="mt-4 py-2 text-secondary font-weight-bold h4">Commandes</p>
+
+      <%=@order.id%><br>
+      <%=@order.created_at.asctime%><br>
+      <%=@order.status%><br>
+      <%@order.items.each do |itm|%>
+        <%=itm.name%><br>
+      <%end%>
+      <%= @order.items.sum("price")%> € <br>
+
+      <%= form_for(@order, url: administration_order_path, html: { method: :patch }) do |f| %>
+
+        <%= f.radio_button :status, 0 %>
+        <%= label :status_0, 'initiated' %>
+        <%= f.radio_button :status, 1 %>
+        <%= label :status_1, 'shipped' %>
+        <%= f.radio_button :status, 2 %>
+        <%= label :status_2, 'delivered' %>
+
+        <div class="actions">
+        <%= f.submit "Editer", class:"btn btn-info btn-lg my-3" %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
