@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
     resources :carts, only: %i[index destroy]
     resources :cart_items, only: %i[update destroy]
-    resources :orders, only: %i[create new]
+    resources :orders, only: %i[create new show]
 
     resources :categories do
       resources :items, only: %i[index destroy]
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   namespace 'administration' do
     get '/admin', to: 'items#index'
-    resources :orders, only: %i[index]
+    resources :orders, only: %i[index show]
     resources :items, only: %i[index show update create new edit destroy]
     resources :users
   end
