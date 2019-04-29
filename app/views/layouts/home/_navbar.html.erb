@@ -51,6 +51,9 @@ Other
 </li>
 <% end %>
 <li>
+<%= link_to "Panier", home_carts_path(current_user.id), class: "nav-link" %>
+</li>
+<li>
 <%= link_to "Profil", home_profile_path(current_user.id), class: "nav-link" %>
 </li>
 <li>
