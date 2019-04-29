@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <%@orders.each do |order| %>
+        <%@orders.order('id ASC').each do |order| %>
         <tr>
           <td>
             <%= link_to order.id ,home_order_path(order.id)%>
@@ -29,7 +29,7 @@
           </td>
           <td><%= order.items.sum("price")%> € </td>
           <td><%= link_to "Etiquette" %> </td>
-          <td>NIL</td>
+          <td><%= order.status%></td>
         </tr>
         <% end%>
       </tbody>
