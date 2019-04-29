@@ -4,5 +4,6 @@
 		<td> <%= user.email %></td>
 		<td> <%= user.admin %></td>
 		<td><a href="<%= edit_administration_user_path(user.id) %>" class="">Editer</a></td>
+		<td><%= link_to "SUPPRIMER", administration_user_path(user.id), :method => :delete,  data: { confirm: 'Etes-vous sûr de vouloir supprimer cet utilisateur ?' } %>
 	</tr>
 <% end %>
