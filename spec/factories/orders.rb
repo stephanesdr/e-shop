@@ -5,6 +5,7 @@
 # Table name: orders
 #
 #  id                 :bigint(8)        not null, primary key
+#  status             :integer          default("initiated")
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  stripe_customer_id :string
@@ -24,5 +25,6 @@ FactoryBot.define do
     stripe_customer_id { "MyString" }
     id { 1 }
     user { FactoryBot.create(:user) }
+    status { rand(0..2) }
   end
 end

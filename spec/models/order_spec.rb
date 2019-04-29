@@ -5,6 +5,7 @@
 # Table name: orders
 #
 #  id                 :bigint(8)        not null, primary key
+#  status             :integer          default("initiated")
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  stripe_customer_id :string
@@ -32,5 +33,6 @@ RSpec.describe Order, type: :model do
     it { is_expected.to have_db_column(:id).of_type(:integer) }
     it { is_expected.to have_db_column(:stripe_customer_id).of_type(:string) }
     it { is_expected.to belong_to :user }
+    it { is_expected.to have_db_column(:status).of_type(:integer) }
   end
 end
