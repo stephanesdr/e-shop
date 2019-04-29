@@ -2,7 +2,7 @@
 
 module Administration
   class UsersController < AdministrationController
-    before_action :set_user, only: %i[update edit]
+    before_action :set_user, only: %i[update edit destroy]
 
     def index
       @users = User.all
@@ -17,6 +17,18 @@ module Administration
         flash[:danger] = "User update abort"
       end
       redirect_to administration_users_path
+    end
+
+    def destroy
+      CartItem.where(cart_id: @user.cart.id).each { |cart_item| CartItem.delete(cart_item) }
+      Cart.delete(@user.cart)
+      Order.where(user_id: @user.id).each do |order|
+        ItemOrder.where(order_id: order.id).each { |item_order| ItemOrder.delete(item_order) }
+        Order.delete(order)
+      end
+      Profile.delete(@user.profile)
+      User.delete(@user)
+      redirect_to request.referer
     end
 
     private
