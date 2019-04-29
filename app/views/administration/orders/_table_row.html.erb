@@ -16,7 +16,9 @@
       <tbody>
         <%@orders.each do |order| %>
         <tr>
-          <td><%= order.id%></td>
+          <td>
+            <%= link_to order.id ,home_order_path(order.id)%>
+          </td>
           <td><%= order.created_at.asctime%></td>
           <td><%= order.stripe_customer_id %></td>
           <td><%= order.user.email%> </td>

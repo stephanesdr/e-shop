@@ -9,6 +9,10 @@ module Home
       redirect_to request.referer
     end
 
+    def show
+      @order = Order.find(params[:id])
+    end
+
     def new
       @user = current_user
       @cart = current_user.cart
