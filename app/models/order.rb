@@ -5,6 +5,7 @@
 # Table name: orders
 #
 #  id                 :bigint(8)        not null, primary key
+#  status             :integer          default("initiated")
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  stripe_customer_id :string
@@ -23,6 +24,7 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :item_orders, dependent: :destroy
   has_many :items, through: :item_orders
+  enum status: %i[initiated shipped delivered]
   after_create :order_confirmation
 
   def order_confirmation
