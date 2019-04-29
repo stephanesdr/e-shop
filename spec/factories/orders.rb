@@ -25,5 +25,6 @@ FactoryBot.define do
     stripe_customer_id { "MyString" }
     id { 1 }
     user { FactoryBot.create(:user) }
+    status { rand(0..2) }
   end
 end
