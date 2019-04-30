@@ -24,6 +24,10 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :item_orders, dependent: :destroy
   has_many :items, through: :item_orders
-
   enum status: %i[initiated shipped delivered]
+  after_create :order_confirmation
+
+  def order_confirmation
+    UserMailer.order_email(self).deliver_now
+  end
 end
