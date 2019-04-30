@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
-RSpec.describe Home::ItemsController, type: :controller do
+RSpec.describe Home::LandingController, type: :controller do
   login_admin
   describe 'get #index' do
     context 'with valid response from server' do
