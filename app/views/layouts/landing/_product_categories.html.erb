@@ -1,0 +1,12 @@
+<div class="sticky-top sticky-top-blocknav">
+    <h1 class="my-4">Catégories</h1>
+    <div class="list-group">
+        <% @categories.each do |category| %>
+        <div class="list-group-item">
+            <%= link_to(home_category_items_path(category.id)) do %>
+            <%= category.name %>
+            <% end %>
+        </div>
+        <% end %>
+    </div>
+</div>
