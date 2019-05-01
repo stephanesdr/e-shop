@@ -1,5 +1,4 @@
-Code Identifiant de Spécialité;Dénomination du médicament;Forme pharmaceutique;Voies d'administration;Statut administratif de l’autorisation de mise sur 
-le marché;Type de procédure d'autorisation de mise sur le marché;Etat de commercialisation;Date d’AMM;StatutBdm;Numéro de l’autorisation européenne;Titulaire;Surveillance renforcée
+code_identifiant;denomination;forme_pharmaceutique;Voies d'administration;Statut administratif de l’autorisation de mise sur le marché;Type de procédure d'autorisation de mise sur le marché;Etat de commercialisation;Date d’AMM;StatutBdm;Numéro de l’autorisation européenne;laboratoire;Surveillance renforcée
 62679978;LANSOYL SANS SUCRE 78,23 g POUR CENT, gel oral en pot édulcoré à la saccharine sodique;Gel;orale;Autorisation active;Procédure nationale;Commercialisée;1990-02-28;;;JOHNSON & JOHNSON SANTE BEAUTE FRANCE;Non
 62633436;LAROXYL 50 mg, comprimé pelliculé;Comprimé Pelliculé;orale;Autorisation active;Procédure nationale;Commercialisée;1991-04-17;;;TEOFARMA;Non
 69304938;LASILIX FAIBLE 20 mg, comprimé;Comprimé;orale;Autorisation active;Procédure nationale;Commercialisée;1977-05-04;;;SANOFI AVENTIS FRANCE;Non

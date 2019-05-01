@@ -7,8 +7,9 @@ module Home
     end
 
     def index
-      @category = Category.find(params["category_id"])
-      @items = @category.items
+      # @category = Category.find(params["category_id"])
+      # @items = @category.items
+      @items = Item.all
     end
   end
 end

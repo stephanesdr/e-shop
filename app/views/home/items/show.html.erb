@@ -15,7 +15,7 @@
       <% end %>
       <p><strong>"<%= @item.description %>"</strong></p>
       <br>
-      <%= link_to("Add to card", home_cart_item_path, class: "btn btn-primary", method: "PATCH") %>
+      <%= link_to("Add to card", home_cart_item_path, class: "btn btn-primary", remote: true, method: "PATCH") %>
       <%= link_to("Back to index", root_path) %>
       </div>
       </div>

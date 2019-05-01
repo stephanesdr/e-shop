@@ -5,8 +5,13 @@ module Home
     def update
       @item = Item.find(params[:id])
       CartItem.create(cart_id: current_user.cart.id, item_id: @item.id)
-      redirect_to request.referer
-      flash[:notice] = "#{@item.name} a été ajouté au panier"
+      # redirect_to request.referer
+      # flash[:notice] = "#{@item.name} a été ajouté au panier"
+      respond_to do |format|
+        format.js
+        flash[:notice] = "#{@item.name} a été ajouté au panier"
+        format.html { redirect_to root_path }
+      end
     end
 
     def destroy
