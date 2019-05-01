@@ -5,10 +5,5 @@ module Home
     def show
       @item = Item.find(params[:id])
     end
-
-    def index
-      @category = Category.find(params["category_id"])
-      @items = @category.items
-    end
   end
 end
