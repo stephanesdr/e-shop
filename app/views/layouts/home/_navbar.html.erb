@@ -50,7 +50,9 @@
           <% end %>
           <li>
           <% if current_user.cart.items.count > 0 %>
-            <%= link_to "Panier", home_carts_path(current_user.id), class: "nav-link" %>
+            <%= link_to home_carts_path(current_user.id), class: "nav-link" do%>
+              Panier<span id="notification_cart"> (<%=current_user.cart.items.count%>)</span>
+            <% end %>
           <% end %>
           </li>
           <li>
