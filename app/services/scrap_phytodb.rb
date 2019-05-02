@@ -139,7 +139,7 @@ class ScrapPhytodb
     # This method is to use only after scrap_categories_items,
     # scrap_description_images and create_hash_plants_diseases methods
     puts '## Export data to CSV.....................'
-    file = "phyto_db_#{Time.now.utc.to_s[0..-5].gsub!(/\s/, '_')}.csv"
+    file = "db/phyto_db_#{Time.now.utc.to_s[0..-5].gsub!(/\s/, '_')}.csv"
     CSV.open(file, "wb") do |csv|
       csv << ["name", "description", "photo_url", "diseases"]
       @hash_plant_description.each do |plant, description|
