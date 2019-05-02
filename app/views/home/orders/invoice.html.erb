@@ -1,0 +1,122 @@
+
+<center><h1 class="invoice-title">FACTURE</h1></center>
+
+
+<div class="container">
+  <div class="row">
+
+    <div class="logo col">
+      <h1>E-Next</h1>
+    </div>
+
+    <div class="col">
+    </div>
+
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="corportae-inofs col">
+
+      e-next.herokuapp.com <br>
+      e-next@yopmail.com <br>
+      0836656565 <br>
+      33 Boulevard Joseph Staline <br>
+      59800 LILLE <br>
+    </div>
+
+      <div class="invoice-infos col">
+      </div>
+
+    <div class="invoice-infos col">
+      FACTURE #<%=@order.id%>
+      <br>
+      DATE DE LA COMMANDE :<%= @order.created_at.asctime%>
+      <br>
+      LIVRÉ LE :<%= @order.updated_at.asctime%>
+    </div>
+
+    </div>
+</div>
+
+<br><br>
+
+<div class="container">
+  <div class="row">
+
+    <div class= "user-infos col">
+      <h3 class="sub-tiltle">Destinataire</h3>
+    <%= @user_profile.first_name  %> <%= @user_profile.last_name  %><br>
+    <%= @user_profile.phone_number  %><br>
+    <%= @user.email  %><br>
+    <br>
+  </div>
+
+  <div class= "col">
+  </div>
+
+    <div class="ship-adress col">
+      <h3 class="sub-tiltle">Adresse de livraison</h3>
+    <%= @user_profile.street%><br>
+    <%= @user_profile.postal_code  %> <br>
+    <%= @user_profile.city  %><br>
+    <br>
+    </div>
+  </div>
+</div>
+
+<br>
+
+    <table class="table table-striped ">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantité</th>
+          <th>Prix à l'unité</th>
+          <th>Somme</th>
+        </tr>
+      </thead>
+      <%@order.items.uniq.each do |item|%>
+      <tbody>
+        <td><%= item.name %></td>
+        <td><%= @order.items.to_a.count(item) %></td>
+        <td><%= item.price %> €</td>
+        <td><%= @order.items.to_a.count(item) * item.price %>€</td>
+      </tbody>
+      <%end%>
+
+  <tbody>
+    <td> NOMBRE D'ARTICLES</td>
+    <td><%= @order.items.count%></td>
+    <td></td>
+    <td></td>
+  </tbody>
+
+  <tbody>
+    <td> REDUCTION</td>
+    <td></td>
+    <td></td>
+    <td>0 %</td>
+  </tbody>
+  <tbody>
+    <td> SOUS-TOTAL</td>
+    <td></td>
+    <td></td>
+    <td><%= @order.items.sum("price")%> €</td>
+  </tbody>
+  <tbody>
+    <td> TVA</td>
+    <td></td>
+    <td>19.6 %</td>
+    <td><%= @order.items.sum("price") * 0.196%>€</td>
+  </tbody>
+  <tbody>
+    <td> TOTAL</td>
+    <td></td>
+    <td></td>
+    <td><%= (@order.items.sum("price") * 1.196).round(2)%>€</td>
+  </tbody>
+</table>

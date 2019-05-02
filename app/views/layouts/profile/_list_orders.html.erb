@@ -7,6 +7,7 @@ VOS COMMANDES <br>
             <th>Nombres d'articles</th>
             <th>Prix</th>
             <th>Status</th>
+            <th>Facture</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@ VOS COMMANDES <br>
             <td><%=order.items.count %></td>
             <td><%=order.items.sum("price")%> €</td>
             <td><%=order.status %></td>
+            <td><%= link_to "DOWNLOAD PDF", home_order_invoice_path(order.id, format: :pdf) %></td>
         </tr>
         <%end%>
     </tbody>

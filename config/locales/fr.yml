@@ -1,0 +1,18 @@
+fr:
+  date:
+    abbr_day_names:
+    - Lu
+    _ Mar
+    _ Mer
+    _ Jeu
+    _ Ven
+    _ Sam
+    _ Dim
+   day_names:
+    - Lundi
+    - Mardi
+    - Mercredi
+    - Jeudi
+    - Vendredi
+    - Samedi
+    - Dimanche
