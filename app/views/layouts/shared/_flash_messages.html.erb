@@ -1,11 +1,18 @@
 <% if notice %>
-	<div class='alert alert-success p-2'>
-		<%= flash[:notice] %>
+	<div class="col-12 p-0">
+		<div class='alert alert-info rounded'>
+			<%= flash[:notice] %>
+		</div>
 	</div>
 <% end %>
 
 <% if alert %>
-	<div class='alert alert-danger p-2'>
-		<%= flash[:alert] %>
+	<div class="col-12 p-0">
+		<div class='alert alert-danger rounded'>
+			<%= flash[:alert] %>
+		</div>
 	</div>
 <% end %>
+
+
+
