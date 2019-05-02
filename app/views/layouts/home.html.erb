@@ -1,36 +1,29 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>E-shop-next</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+	<title>E-shop-next</title>
+	<%= csrf_meta_tags %>
+	<%= csp_meta_tag %>
 
-  <body>
-    <div class="wrapper">
-      <div class="d-flex">
+	<%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
+<body>
+	<div class="main">
+		<main class="content">
+			<%= render partial: "layouts/home/navbar" %>
+			<div class="container-fluid p-5">
+			 <%= render "layouts/shared/flash_messages" %>
 
+				<%= yield %>
+			</div>
+		</main>
 
-        <div class="main">
+	</div>
 
+</body>
 
-
-
-          <main class="content">
-                    <%= render partial: "layouts/home/navbar" %>
-          <div class="container py-5">
-          <%= render "layouts/shared/flash_messages" %>
-              <%= yield %>
-            </div>
-          </main>
-
-        </div>
-
-      </div>
-    </div>
-  </body>
 </html>

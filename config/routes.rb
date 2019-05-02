@@ -2,9 +2,7 @@
 
 Rails.application.routes.draw do
   devise_for :users, controllers: { confirmations: 'confirmations' }
-  root 'home/categories#index'
-
-  get '/landing', to: 'landing#landing_page'
+  root 'home/landing#index'
 
   # resources :carts, only: %i[index destroy]
   # resources :cart_items, only: %i[update destroy]

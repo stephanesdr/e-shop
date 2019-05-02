@@ -1,0 +1,28 @@
+<div class="card mb-3 col-md-12 p-0" style="max-width: 640px;">
+    <div class="card-title p-1 bg-info text-white text-bold ">PROFIL</div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="badge badge-info font-weight-light"> prénom </span> <%= @profile.first_name %>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="badge badge-info font-weight-light"> nom </span> <%= @profile.last_name %>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="badge badge-info font-weight-light"> téléphone </span> <%= @profile.phone_number %>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="badge badge-info font-weight-light"> rue </span> <%= @profile.street %>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="badge badge-info font-weight-light"> code postal </span> <%= @profile.postal_code %>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="badge badge-info font-weight-light"> ville </span> <%= @profile.city %>
+            </li>
+            <li class="list-group-item">
+                <%= link_to  "éditer", edit_home_profile_path(@profile.id), class: "btn warning btn-lg my-3" %>
+            </li>
+        </ul>
+    </div>
+</div>

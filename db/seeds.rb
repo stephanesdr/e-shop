@@ -9,6 +9,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'csv'
 
 # == seed some users ==
 puts 'Seeding users...'

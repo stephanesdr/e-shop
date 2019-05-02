@@ -1,22 +1,38 @@
-<div class="container mb-2">
-      <br><br>
-      <div class="row">
-        <div class="col-md-6">
-          <%if @item.picture.attached?%>
-          <%= image_tag @item.picture, alt: 'picture', class: 'picture' %>
-          <% end %>
+<div class="container" style="width: 60vw;">
+  <div class="card p-5 shadow-lg rounded d-border">
+    <div class="row pt-3">
+      <div class="col-4">
+        <%= render "layouts/items/image_product" %>
+      </div>
+      <div class="col-8 px-4">
+        <%= render "layouts/items/description_product" %>
+      </div>
+    </div>
+
+    <div class="row py-3">
+      <div class="col-4">
+        <%= link_to("Add to card", home_cart_item_path, class: "btn btn-info", method: "PATCH") %>
+      </div>
+      <div class="col-8">
+        <div class="row justify-content-between">
+          <div class="col-6 px-4">
+            <%= render "layouts/items/price_product" %>
+          </div>
+          <div class="col-6">
+            <div class="d-flex justify-content-end"><%= link_to(root_path, class: "warning") do %>
+              <i class="fe fe-stop"></i> back
+              <% end %></div>
+          </div>
         </div>
-        <div class="col-md-6">
-      <h2 class="font-weight-bold"><%= @item.name %></h2>
-      <% if @item.discount == false %>
-      <h3 class="font-weight-light"><%= @item.price %>€</h3>
-      <% elsif @item.discount == true %>
-      <h3 class="font-weight-light"><del><%= @item.price %>€</del> <%= @item.reduced_price%> € (- <%= @item.percentage_discount %> %)</h3>
-      <% end %>
-      <p><strong>"<%= @item.description %>"</strong></p>
-      <br>
-      <%= link_to("Add to card", home_cart_item_path, class: "btn btn-primary", method: "PATCH") %>
-      <%= link_to("Back to index", root_path) %>
       </div>
-      </div>
+    </div>
+  </div>
 </div>
+
+<% if current_user %>
+	<%= render "layouts/landing/checkout_cart" %>
+
+  		<%= javascript_include_tag 'checkout_cart' %>
+<% end %>
+
+

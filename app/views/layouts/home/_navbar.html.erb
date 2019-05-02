@@ -1,13 +1,15 @@
 <div class="row mb-5">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container px-0">
-    <%= link_to  "E-next", root_path, class: "navbar-brand" %>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+    <div class="container-fluid ">
+      <%= link_to  "E-next", root_path, class: "navbar-brand font-weight-bold" %>
       <!-- links toggle -->
-      <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#links" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#links"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
       </button>
       <!-- account toggle -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#account" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#account"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-user"></i>
       </button>
 
@@ -28,8 +30,10 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link 5</a>
           </li>
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
               Other
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -38,27 +42,31 @@
               <a class="dropdown-item" href="#">Dropdown 3</a>
             </div>
           </li>
+
         </ul>
       </div>
       <% if current_user %>
       <div class="collapse navbar-collapse" id="account">
         <ul class="navbar-nav ml-auto">
-        <% if current_user.admin %>
-          <li>
-          <%= link_to "Admin dashboard", administration_admin_path, class: "dropdown-item, nav-link" %>
+          <% if current_user.admin %>
+          <li class="nav-item">
+            <%= link_to "Admin dashboard", administration_admin_path, class: "dropdown-item nav-link" %>
           </li>
           <% end %>
-          <li>
-          <% if current_user.cart.items.count > 0 %>
-            <%= link_to "Panier", home_carts_path(current_user.id), class: "nav-link" %>
+
+          <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "profil", home_profile_path(current_user.id), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "deconnexion", destroy_user_session_path, method: "delete", class: "nav-link" %>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "deconnexion", destroy_user_session_path, method: "delete", class: "nav-link" %>
+          </li>
           <% end %>
-          </li>
-          <li>
-          <%= link_to "Profil", home_profile_path(current_user.id), class: "nav-link" %>
-          </li>
-          <li>
-          <%= link_to "Deconnexion", destroy_user_session_path, method: "delete", class: "nav-link" %>
-          </li>
+
         </ul>
       </div>
       <% else %>
