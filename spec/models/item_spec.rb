@@ -7,6 +7,7 @@
 #  id                  :bigint(8)        not null, primary key
 #  description         :text
 #  discount            :boolean          default(FALSE)
+#  image_url           :string
 #  name                :string
 #  percentage_discount :integer          default(0)
 #  price               :float
