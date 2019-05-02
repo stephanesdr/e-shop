@@ -4,7 +4,12 @@ module Home
   class CartItemsController < HomeController
     def update
       @item = Item.find(params[:id])
-      CartItem.create(cart_id: current_user.cart.id, item_id: @item.id)
+      quantity = if params[:quantity].to_i.zero?
+                   1
+                 else
+                   params[:quantity].to_i
+                 end
+      CartItem.create(cart_id: current_user.cart.id, item_id: @item.id, quantity: quantity)
       # redirect_to request.referer
       # flash[:notice] = "#{@item.name} a été ajouté au panier"
       respond_to do |format|
