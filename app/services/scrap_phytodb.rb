@@ -20,11 +20,11 @@
 # delete_items_categories
 # perform
 
-require 'faker'
-require 'nokogiri'
-require 'open-uri'
-require 'csv'
-require 'pry'
+# require 'faker'
+# require 'nokogiri'
+# require 'open-uri'
+# require 'csv'
+# require 'pry'
 
 class ScrapPhytodb
   attr_accessor :hash_plants_url, :hash_disease_plants,
