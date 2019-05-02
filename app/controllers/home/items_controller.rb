@@ -5,7 +5,7 @@ module Home
     def show
       @item = Item.find(params[:id])
 
-      return if current_user == true
+      return unless current_user
 
       @products = []
       @cart = Cart.find(current_user.cart.id)

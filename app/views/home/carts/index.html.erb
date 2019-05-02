@@ -1,21 +1,52 @@
-
-<% @items.each do |item| %>
-<%= item.id %>
-<br>
-<%= item.name%>
-<br>
-<%= item.reduced_price%> €
-<br>
-<% cart_item = CartItem.where(cart_id: @cart.id ,item_id: item.id)[0]%>
-<%= link_to "DELETE", home_cart_item_path(cart_item.id), :method => :delete,  data: { confirm: 'Are you sure you want to delete this article from your cart ?' } %>
-<br><br>
-<% end %>
-
-<h3>Somme : <%=@cart.sum_price%> €</h3>
-
-<br>
-<% if !@cart.items.empty? %>
-
-<h3><%= link_to "Passer à la page de payement", home_payments_path, method: "get" %></h3>
-
-<% end%>
+<div class="container">
+    <div class="row">
+        
+        <table class="cart_check">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>QTY</th>
+                    <th>Price</th>
+                    <!--	<th>&nbsp;</th>-->
+                </tr>
+            </thead>
+            <tbody>
+                <% @items.each do |item| %>
+                <tr>
+                    <td><%= item.name %>
+                        <span>
+                            <% item.categories.each do|cat| %>
+                            <%=cat.name %>
+                            <%end%>
+                        </span>
+                    </td>
+                    <td>1</td>
+                    <td><%= item.price %></td>
+                    <td>
+                        <button class="checkout__action">
+                            <% cart_item = CartItem.where(cart_id: @cart.id ,item_id: item.id)[0]%>
+                            <%= link_to(home_cart_item_path(cart_item.id), :method => :delete,  data: { confirm: 'Are you sure you want to delete this article from your cart ?' }) do %>
+                            <i class="icon fa fa-trash"></i>
+                            <% end %>
+                        </button>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table><!-- /checkout__summary -->
+    </div>
+    
+    
+    
+    
+    
+    <div class="row">
+        <h3>Somme : <%=@cart.sum_price%> €</h3>
+        
+        <% if !@cart.items.empty? %>
+        
+        <h3><%= link_to "Passer à la page de payement", home_payments_path, method: "get" %></h3>
+        
+        <% end%>
+    </div>
+</div>
