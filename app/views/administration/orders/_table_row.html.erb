@@ -10,6 +10,7 @@
           <th>Articles</th>
           <th>Total</th>
           <th>Etiquette Postale</th>
+          <th>Facture</th>
           <th>Status</th>
         </tr>
       </thead>
@@ -29,6 +30,7 @@
           </td>
           <td><%= order.items.sum("price")%> € </td>
           <td><%= link_to "DOWNLOAD PDF", administration_order_postal_sticker_path(order.id, format: :pdf) %></td>
+          <td><%= link_to "DOWNLOAD PDF", home_order_invoice_path(order.id, format: :pdf) %></td>
           <td><%= order.status%></td>
         </tr>
         <% end%>

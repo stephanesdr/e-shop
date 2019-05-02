@@ -9,6 +9,26 @@ module Home
       redirect_to request.referer
     end
 
+    def invoice
+      @order = Order.find(params[:order_id])
+      @user = @order.user
+      @user_profile = @order.user.profile
+
+      respond_to do |format|
+        format.html
+        format.pdf do
+          render pdf: "Order No. #{@order.id}",
+                 page_size: 'A4',
+                 template: "home/orders/invoice.html.erb", formats: :html, encoding: 'utf8',
+                 layout: "pdf.html",
+                 orientation: "Portrait",
+                 lowquality: true,
+                 zoom: 1,
+                 dpi: 75
+        end
+      end
+    end
+
     def show
       @order = Order.find(params[:id])
     end

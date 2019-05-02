@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2019_05_02_134620) do
     t.integer "percentage_discount", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
   end
 
   create_table "laboratoires", force: :cascade do |t|

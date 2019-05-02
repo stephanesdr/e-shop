@@ -40,6 +40,7 @@ group :development do
   gem 'annotate', '~> 2.7', '>= 2.7.4'
   gem 'husky', '~> 0.5.15'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'nokogiri'
   gem "relaxed-rubocop", require: false
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false

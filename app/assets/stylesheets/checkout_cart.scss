@@ -206,6 +206,15 @@ a.checkout__button:focus {
 	transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.3s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
+.cart_check {
+    
+    margin: 0.5em 0 0.75em;
+    width: 100%;
+    color: #493b3b;
+    font-size: 1.15em;
+    line-height: 1.5;
+}
+
 .checkout__summary tr:nth-child(1) {
 	-webkit-transform: translate3d(0, 120px, 0);
 	transform: translate3d(0, 120px, 0);
