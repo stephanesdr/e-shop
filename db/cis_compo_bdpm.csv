@@ -1,4 +1,4 @@
-Code Identifiant de Spécialité;Désignation de l'élément pharmaceutique;Code de la substance;Dénomination de la substance;Dosage de la substance;Référence de ce dosage;Nature du composant;Numéro permettant de lier, le cas échéant, substances actives et fractions thérapeutiques
+code_identifiant;format_administration;Code de la substance;denomination_de_la_substance;dosage_de_la_substance;réferent_dosage;Nature du composant;Numéro permettant de lier, le cas échéant, substances actives et fractions thérapeutiques
 62760907;Collyre;97986;LODOXAMIDE TROMÉTAMOL;0,1780 g;100 ml;Principe Actif;1
 62761329;Comprimé;527;GLICLAZIDE;80 mg;un comprimé;Principe Actif;1
 62844369;Comprimé;24321;CHLORHYDRATE DE METFORMINE;500 mg;un comprimé;Principe Actif;1
