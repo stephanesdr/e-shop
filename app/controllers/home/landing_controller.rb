@@ -6,7 +6,7 @@ module Home
       @categories = Category.all
       @items = Item.all
 
-      return if current_user == true
+    return unless current_user 
 
       @products = []
       @cart = Cart.find(current_user.cart.id)
