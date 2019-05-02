@@ -319,6 +319,7 @@ DEPENDENCIES
   jquery-rails (~> 4.3, >= 4.3.3)
   listen (>= 3.0.5, < 3.2)
   mailjet
+  nokogiri
   pg (>= 0.18, < 2.0)
   pry-byebug (~> 3.6)
   puma (~> 3.11)
