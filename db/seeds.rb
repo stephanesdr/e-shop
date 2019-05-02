@@ -31,7 +31,7 @@ if !User.find_by(email: "admin@e-shop.com")
   User.create!(
     email: "admin@e-shop.com",
     password: "superpassword",
-    confirmed_at: Time.zone.now
+    confirmed_at: Time.zone.now,
     admin: true
   )
   p "Admin created"
