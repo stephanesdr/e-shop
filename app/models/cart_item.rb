@@ -5,6 +5,7 @@
 # Table name: cart_items
 #
 #  id         :bigint(8)        not null, primary key
+#  quantity   :integer          default(1)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  cart_id    :bigint(8)
@@ -24,4 +25,9 @@
 class CartItem < ApplicationRecord
   belongs_to :item
   belongs_to :cart
+
+  def price
+    price = item.reduced_price * quantity
+    price.round(2)
+  end
 end

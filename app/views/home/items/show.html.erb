@@ -11,7 +11,11 @@
 
     <div class="row py-3">
       <div class="col-4">
-        <%= link_to("Add to card", home_cart_item_path, class: "btn btn-info", method: "PATCH") %>
+        <%= form_tag(home_cart_item_path, method: :patch) do |f| %>
+        <%= label_tag 'Quantité :' %>
+        <%= number_field_tag 'quantity', nil, in: 1...10, placeholder: 1 %>
+        <%= submit_tag "Add to cart", class:"btn btn-info" %>
+        <% end %>
       </div>
       <div class="col-8">
         <div class="row justify-content-between">
@@ -34,5 +38,3 @@
 
   		<%= javascript_include_tag 'checkout_cart' %>
 <% end %>
-
-

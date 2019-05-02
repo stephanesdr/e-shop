@@ -25,7 +25,7 @@ class Cart < ApplicationRecord
 
   def sum_price
     sum = 0
-    CartItem.where(cart_id: id).find_each { |cart_item| sum += cart_item.item.reduced_price }
+    CartItem.where(cart_id: id).find_each { |cart_item| sum += cart_item.price }
     sum.round(2)
   end
 end

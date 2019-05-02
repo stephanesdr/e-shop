@@ -11,7 +11,7 @@ module Home
     end
 
     def show
-      @profile = Profile.find(params[:id])
+      @profile = Profile.find(current_user.profile.id)
       @orders = Order.where(user_id: current_user.id)
     end
 
