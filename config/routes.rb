@@ -26,7 +26,9 @@ Rails.application.routes.draw do
 
   namespace 'administration' do
     get '/admin', to: 'items#index'
-    resources :orders, only: %i[index show update]
+    resources :orders, only: %i[index show update] do
+      get '/postal_sticker/', to: 'orders#postal_sticker'
+    end
     resources :items, only: %i[index show update create new edit destroy]
     resources :users
   end

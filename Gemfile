@@ -27,6 +27,8 @@ gem 'sidekiq', '~> 5.2.2'
 gem 'stripe'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'factory_bot_rails', '~> 4.0'
