@@ -15,13 +15,15 @@
 	<div class="main">
 		<main class="content">
 			<%= render partial: "layouts/home/navbar" %>
-			<div class="container py-5">
-				<%= render "layouts/shared/flash_messages" %>
+			<div class="container-fluid p-5">
+			 <%= render "layouts/shared/flash_messages" %>
+
 				<%= yield %>
 			</div>
 		</main>
 
 	</div>
+
 </body>
 
 </html>
