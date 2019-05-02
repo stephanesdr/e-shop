@@ -1,5 +1,9 @@
 
 <div class="row row-devise align-items-center ">
+
+<% flash.each do |name, msg| %>
+<%= content_tag :div, msg, :id => "flash_#{name}", class: "btn btn-info" %>
+<% end %>
   <div class="text-center mx-auto">
     <h2 class="my-5">Connexion</h2>
 
@@ -31,7 +35,6 @@
   </div>
   
 </div>
-
 
 
 
