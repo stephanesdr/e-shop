@@ -111,7 +111,7 @@
     <td> TVA</td>
     <td></td>
     <td>19.6 %</td>
-    <td><%= @order.items.sum("price") * 0.196%>€</td>
+    <td><%= (@order.items.sum("price") * 0.196).round(2)%>€</td>
   </tbody>
   <tbody>
     <td> TOTAL</td>
