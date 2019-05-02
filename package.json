@@ -1,7 +1,9 @@
 {
   "name": "project_01",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "feather-icons": "^4.21.0"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "rubocop",

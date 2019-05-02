@@ -14,91 +14,28 @@
       <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
 
         <div class="row">
-          <div class="card mb-3 col-md-8 p-0" style="max-width: 640px;">
-            <div class="card-title p-1 bg-info text-white text-bold ">Bienvenue</div>
-              <div class="card-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Expedita accusantium eos sunt. Voluptatem aliquam pariatur doloribus incidunt
-                qui nesciunt autem repellendus itaque officia accusamus vero,
-                laudantium minus vitae aut reprehenderit!
-            </div>
-          </div>
+          <%= render "layouts/profile/list_home" %>
         </div>
-
       </div>
 
-      <!--PROFILE -->
       <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
         <div class="row">
-          <div class="card mb-3 col-md-8 p-0" style="max-width: 640px;">
-            <div class="card-title p-1 bg-info text-white text-bold ">PROFIL</div>
-              <div class="card-body">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <span class="badge badge-info"> prénom </span> <%= @profile.first_name %>
-                  </li>
-                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class="badge badge-info"> nom </span> <%= @profile.last_name %>
-                </li>
-                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class="badge badge-info"> téléphone </span> <%= @profile.phone_number %>
-                </li>
-                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class="badge badge-info"> rue </span> <%= @profile.street %>
-                </li>
-                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class="badge badge-info"> code postal </span> <%= @profile.postal_code %>
-                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class="badge badge-info"> ville </span> <%= @profile.city %>
-                </li>
-                 <li class="list-group-item">
-                  <%= link_to  "éditer", edit_home_profile_path(@profile.id), class: "btn btn-warning btn-lg my-3" %>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <%= render "layouts/profile/list_profile" %>
         </div>
      </div>
 
       <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-        historique de nos paniers (payé ou en cours) <br>
-        Possibilité de sauvegarder des paniers ? feature supplémentaire
+          <%= render "layouts/profile/list_message" %>
       </div>
+
       <div class="tab-pane fade" id="list-orders" role="tabpanel" aria-labelledby="list-orders-list">
-        VOS COMMANDES <br>
-        <table class="table table-striped table-hover">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Date</th>
-              <th>Nombres d'articles</th>
-              <th>Prix</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <%@orders.order('created_at ASC').each do |order| %>
-            <tr>
-              <td>
-                <%= link_to home_order_path(order.id) do %>
-                  Commande #<%= order.id %>
-                <%end%>
-              </td>
-              <td><%= order.created_at.asctime%></td>
-              <td><%=order.items.count %></td>
-              <td><%=order.items.sum("price")%> €</td>
-              <td><%=order.status %></td>
-            </tr>
-            <%end%>
-          </tbody>
-
-
-        </table>
+         <%= render "layouts/profile/list_orders" %>
       </div>
+
       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-        option pour supprimer son compte
+        <%= render "layouts/profile/list_settings" %>
       </div>
+      
     </div>
   </div>
 </div>

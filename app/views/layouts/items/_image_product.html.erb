@@ -1,0 +1,6 @@
+
+<% if @item.picture.attached? %>
+  <%= image_tag @item.picture, alt: 'picture', class: 'picture' %>
+<% else %>
+  <%= image_tag("https://via.placeholder.com/350x350.png/4e4e4f", size: "250", alt: "placeholder", class: "card-img-top") %>
+<% end %>

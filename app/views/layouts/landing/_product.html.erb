@@ -1,104 +1,67 @@
 <div class="card-group">
 	<% @items.each do |item| %>
-	
+
 	<div class="col-lg-4 col-md-6 mb-4">
 		<div class="card card-items product-grid">
 			<div class="product-image">
-				<a href="#"><img class="card-img-top" src="https://via.placeholder.com/150.png/75CAEB" alt=""></a>
+				<%= link_to(home_item_path(item.id)) do %>
+				<img class="card-img-top" src="https://via.placeholder.com/150.png/4e4e4f" alt="">
+				<% end %>
+				
 				<ul class="social">
 					<li>
 
 
-<a href="#" data-toggle="modal" data-target="#modal-<%= item.id %>">
-<i class="far fa-eye"></i>
-</a>
-		
+						<a href="#" data-toggle="modal" data-target="#modal-<%= item.id %>">
+							<i class="fe fe-search"></i>
+						</a>
+
 					</li>
 					<li>
+						<% if user_signed_in? %>
 						<%= link_to home_cart_item_path(item.id), method: "patch" do %>
-						<i class="fas fa-shopping-cart"></i>
+						<i class="fe fe-cart"></i>
+						<% end %>
+						<% else %>
+						<%= link_to user_session_path do %>
+						<i class="fe fe-cart"></i>
+						<% end %>
 						<% end %>
 					</li>
 				</ul>
 				<% if item.discount == true %>
-				<span class="product-sale-label">Sale</span>
+				<span class="product-sale-label warning">Sale</span>
 				<% end %>
 			</div>
 			<div class="card-body product-content pt-4">
 				<h4 class="card-title">
 					<%= link_to(item.name, home_item_path(item.id)) %>
 				</h4>
-				<% if item.discount != true %>
-				<div class="price">
-					<%= item.reduced_price%> €
-					<span><%= item.price%> €</span>
-				</div>
-				<% else %>
+				<% if item.discount == false %>
 				<div class="price">
 					<%= item.price%> €
 				</div>
+				<% else %>
+				<div class="price">
+					<%= item.reduced_price %> €
+						<span><%= item.price%> €</span>
+				</div>
 				<% end %>
-				    <div class="card-footer">
-	      <small class="text-muted">
-				<% item.categories.each do|cat| %>
+				<div class="card-footer">
+					<small class="text-muted">
+						<% item.categories.each do|cat| %>
 						<%=cat.name %>
-											<%end%>
-	
-								</small>
-	    </div>
-			
+						<%end%>
+
+					</small>
+				</div>
+
 				</ul>
 			</div>
 		</div>
 	</div>
-	
+
 	<% end %>
 </div>
 
-
-
-	<% @items.each do |item| %>
-
-
-<div id="modal-<%= item.id %>" class="modal fade" tabindex="-1" aria-labelledby="modalDescriptionItem" aria-hidden="true">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-		<div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">
-					<%= link_to(item.name, home_item_path(item.id)) %>
-				</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-body">
-				<ul class="list-group">
-					<li class="list-group-item">
-					Description : <%= item.description %>
-					</li>
-					<li class="list-group-item">
-						Composition : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nostrum officia neque expedita? Vel, ipsa deleniti quae earum, quidem eaque illo facilis nesciunt ab a autem iure non harum quas.
-					</li>
-					<li class="list-group-item">
-						Laboratory : ...
-					</li>
-					<li class="list-group-item">
-						 <small class="text-muted">
-				<% item.categories.each do|cat| %>
-						<%=cat.name %>
-											<%end%>
-	
-								</small>
-					</li>
-				</ul>
-			</div>
-
-    </div>
-  </div>
-</div>		
-
-<% end %>
-
-
-
+<%= render "layouts/landing/product_modal" %>
