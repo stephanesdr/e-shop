@@ -7,7 +7,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,700);
 
-$warning: #f76464; 
+$warning: #f76464;
 
 .warning { color: $warning; }
 
@@ -61,6 +61,11 @@ $warning: #f76464;
   * inputs, but hey, it's new and cool and could remove the
   * pesky delay.
   */
+  .number_field {
+    font-size: 1em;
+    width: 120px;
+    padding-bottom: 3px;
+  }
 
   input {
     font-size: 1.5em;
@@ -152,7 +157,7 @@ ALERT FLASH NOTiCE
 
 
 /*----------------------
-Product Card Styles 
+Product Card Styles
 ----------------------*/
 .panel.panel--styled {
   background: #F4F2F3;
@@ -170,7 +175,7 @@ Product Card Styles
   color: #fff;
 }
 .btn.btn-add-to-cart.focus, .btn.btn-add-to-cart:focus, .btn.btn-add-to-cart:hover  {
-color: #fff;   
+color: #fff;
   background: #FD7172;
 outline: none;
 }
@@ -184,9 +189,3 @@ span.itemPrice {
   font-size: 24px;
   color: #FA5B58;
 }
-
-
-
-
-
-
