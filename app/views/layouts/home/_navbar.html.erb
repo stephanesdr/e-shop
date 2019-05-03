@@ -56,7 +56,7 @@
 
           <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "profil", home_profile_path(current_user.id), class: "nav-link" %>
+            <%= link_to "profil", home_profile_path(current_user.profile.id), class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "deconnexion", destroy_user_session_path, method: "delete", class: "nav-link" %>

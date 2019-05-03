@@ -19,9 +19,8 @@
 					</li>
 					<li>
 						<% if user_signed_in? %>
-						<%= link_to home_cart_item_path(item.id), method: "patch" do %>
+						<a href="#" data-toggle="modal" data-target="#cart-<%= item.id %>">
 						<i class="fe fe-cart"></i>
-						<% end %>
 						<% else %>
 						<%= link_to user_session_path do %>
 						<i class="fe fe-cart"></i>
@@ -64,4 +63,5 @@
 	<% end %>
 </div>
 
+<%= render "layouts/landing/cart_modal" %>
 <%= render "layouts/landing/product_modal" %>
