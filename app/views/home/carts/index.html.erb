@@ -11,7 +11,7 @@
                 </tr>
             </thead>
             <tbody>
-                <% @cart_items.each do |cart_item| %>
+                <% @cart_items.order(:created_at).each do |cart_item| %>
                 <tr>
                     <td><%= cart_item.item.name %>
                         <span>
@@ -20,11 +20,14 @@
                             <%end%>
                         </span>
                     </td>
-                    <td><%= cart_item.quantity %></td>
-                    <td><%= cart_item.price %> €</td>
+                    <td><%= form_for(cart_item, url: home_cart_item_path(cart_item.id), html: { method: :patch }) do |f| %>
+                    <%= f.number_field :quantity, autocomplete: "quantity", class: "number_field", in: 1...10 %>
+                    <%= submit_tag "Éditer", class:"btn btn-info btn-sm" %>
+                    <% end %></td>
+                    <td class="price-<%=cart_item.id%>"><%= cart_item.price %> €</td>
                     <td>
                         <button class="checkout__action">
-                            <%= link_to(home_cart_item_path(cart_item.id), :method => :delete,  data: { confirm: 'Are you sure you want to delete this article from your cart ?' }) do %>
+                            <%= link_to(home_cart_item_path(cart_item.id), :method => :delete,  data: { confirm: 'Êtes-vous sûr de vouloir supprimer cette article de votre panier ?' }) do %>
                             <i class="icon fa fa-trash"></i>
                             <% end %>
                         </button>
