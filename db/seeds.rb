@@ -39,6 +39,13 @@ else
   p "Admin already exist"
 end
 
+# == seed images ==
+puts '## Seed image_url.....................'
+Item.all.each do |item|
+  url_image = item.name + ".jpg"
+  item.update(image_url: url_image)
+end
+
 # == scrapping phytodata ==
 # Use of service scrap_phytodb.rb in app/services/
 # Initialize scrapping : true = scrapping, false = initialize without scrapping
