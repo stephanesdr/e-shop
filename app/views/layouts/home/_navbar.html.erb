@@ -1,7 +1,11 @@
 <div class="row mb-5">
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
     <div class="container-fluid ">
-      <%= link_to  "E-next", root_path, class: "navbar-brand font-weight-bold" %>
+      <%= link_to(root_path, class: "navbar-brand") do %>
+        <button class="cbutton cbutton--effect-ivana">
+          <span class="font-weigh-bold">E-next</span> 
+        </button>
+      <% end %>
       <!-- links toggle -->
       <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#links"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
