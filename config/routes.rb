@@ -4,10 +4,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { confirmations: 'confirmations' }
   root 'home/landing#index'
 
-  # resources :carts, only: %i[index destroy]
-  # resources :cart_items, only: %i[update destroy]
-  # resources :orders, only: %i[create]
-
   namespace 'home' do
     get '/', to: 'categories#index'
 
@@ -22,7 +18,9 @@ Rails.application.routes.draw do
     end
 
     resources :profiles
-    resources :items, only: %i[index show]
+    resources :items, only: %i[index show] do
+      resources :cart_items, only: %i[create]
+    end
     resources :payments, only: %i[index]
   end
 
