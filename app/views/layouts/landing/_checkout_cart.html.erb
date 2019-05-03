@@ -31,17 +31,17 @@
 						</tr>
 					</thead>
 					<tbody>
-						<% current_user.cart.items.each do |item| %>
+						<% current_user.cart.cart_items.each do |cart_item| %>
 						<tr>
-							<td><%= item.name %>
+							<td><%= cart_item.item.name %>
 								<span>
-									<% item.categories.each do|cat| %>
+									<% cart_item.item.categories.each do|cat| %>
 									<%=cat.name %>
 									<%end%>
 								</span>
 							</td>
-							<td>1</td>
-							<td><%= item.price %></td>
+							<td><%= cart_item.quantity %></td>
+							<td><%= cart_item.price %></td>
 							<!--	<td>
 <button class="checkout__action">
 <i class="icon fa fa-trash"></i>
