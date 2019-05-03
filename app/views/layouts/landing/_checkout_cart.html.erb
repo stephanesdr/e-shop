@@ -57,7 +57,7 @@
 	</div><!-- /checkout -->
 	<div class="checkout__count">
 		<% if current_user %>
-		<%= current_user.cart.items.size %>
+		<%= current_user.cart.cart_items.sum(:quantity) %>
 		<% else %>
 		0
 		<% end %>
