@@ -4,13 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { confirmations: 'confirmations' }
   root 'home/landing#index'
 
-  # resources :carts, only: %i[index destroy]
-  # resources :cart_items, only: %i[update destroy]
-  # resources :orders, only: %i[create]
-
   namespace 'home' do
-    get '/', to: 'categories#index'
-
     resources :carts, only: %i[index destroy]
     resources :cart_items, only: %i[update destroy]
     resources :orders, only: %i[create new show] do
@@ -28,8 +22,10 @@ Rails.application.routes.draw do
 
   namespace 'administration' do
     get '/admin', to: 'items#index'
+    get '/sending_room/', to: 'orders#sending_room'
     resources :orders, only: %i[index show update] do
       get '/postal_sticker/', to: 'orders#postal_sticker'
+      get '/items_checklist/', to: 'orders#items_checklist'
     end
     resources :items, only: %i[index show update create new edit destroy]
     resources :users
