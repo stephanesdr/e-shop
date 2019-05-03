@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     end
 
     resources :profiles
-    resources :items, only: %i[index show]
+    resources :items, only: %i[index show] do
+      resources :cart_items, only: %i[create]
+    end
     resources :payments, only: %i[index]
   end
 

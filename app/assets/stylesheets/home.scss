@@ -58,6 +58,7 @@ a:hover {
   font-size: medium;
 }
 
+
 .field {
   display: flex;
   flex-flow: column;
@@ -70,6 +71,13 @@ a:hover {
 * inputs, but hey, it's new and cool and could remove the
 * pesky delay.
 */
+
+.number_field {
+  font-size: 1em;
+  width: 120px;
+  padding-bottom: 3px;
+}
+
 
 input {
   font-size: 1.5em;
@@ -312,74 +320,4 @@ ______--___--_------_-__-*/
   border-color: #31ca97;
   font-size: 1.1rem;
   color: #228b7a;
-}
-
-
-
-/*----------------------
-Product Card Styles 
-----------------------*/
-.panel.panel--styled {
-  background: #F4F2F3;
-}
-
-.panelTop {
-  padding: 30px;
-}
-
-.panelBottom {
-  border-top: 1px solid #e7e7e7;
-  padding-top: 20px;
-}
-
-.btn-add-to-cart {
-  background: #FD5A5B;
-  color: #fff;
-}
-
-.btn.btn-add-to-cart.focus,
-.btn.btn-add-to-cart:focus,
-.btn.btn-add-to-cart:hover {
-  color: #fff;
-  background: #FD7172;
-  outline: none;
-}
-
-.btn-add-to-cart:active {
-  background: #F9494B;
-  outline: none;
-}
-
-
-span.itemPrice {
-  font-size: 24px;
-  color: #FA5B58;
-}
-
-
-.bg-profile {
-  background: {
-    image: asset-url("bg-02.jpg");
-  }
-  opacity: 0.8;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-}
-
-.bg-navbar {
-  background: {
-    image: asset-url("bg-03.jpg");
-  }
-  opacity: 1;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  left: 0px;
-
 }
