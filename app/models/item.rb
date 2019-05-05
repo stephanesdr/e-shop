@@ -30,10 +30,10 @@ class Item < ApplicationRecord
     (price - price * percentage_discount / 100).round(2)
   end
 
-  def self.most_popular(limit)
+  def self.most_popular(number_of_items)
     arr = []
     ItemOrder.all.find_each { |itm_ord| arr << itm_ord.item }
     freq = arr.each_with_object(Hash.new(0)) { |v, h| h[v] += 1; }
-    Hash[freq.sort_by{ |_k, v| -v }.first(limit)].keys
+    Hash[freq.sort_by{ |_k, v| -v }.first(number_of_items)].keys
   end
 end
