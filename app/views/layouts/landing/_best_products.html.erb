@@ -1,15 +1,7 @@
-<div class="jumbotron jumbotron-fluid bg-navbar mb-5" style="width: 100%">
 
-
-  <div class="container">
-
-    <h1 class="display-4 jumbo-title">MEILLEURES VENTES :</h1>
-
-    <br>
 
     <div class="row">
       <% @most_popular_items.each do |item| %>
-          <div class="col-sm">
 
             <div class="card" style="width: 12rem;">
               <img class="card-img-top" src="<%= image_url(item.image_url) %>" alt="<%= item.name %>" width="300"  height= "200">
@@ -19,10 +11,6 @@
                 <%= link_to home_item_path(item.id) , class: "cbutton cbutton--effect-ivana" do %>
                   <span class="font-weigh-bold btn btn-info btn-lg">Découvrir</span>
                 <% end %>
-
-              </div>
-            </div>
-          </div>
       <% end %>
   </div>
 

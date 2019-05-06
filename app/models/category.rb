@@ -15,4 +15,8 @@ class Category < ApplicationRecord
   has_many :items, through: :category_items
 
   validates :name, presence: true
+
+  def self.alphabet
+    Category.all.sort_by(&:name)
+  end
 end
