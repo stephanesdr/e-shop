@@ -26,6 +26,18 @@ puts 'Seeding users...'
   p "User #{i} : created"
 end
 
+#  == seed profiles of users ==
+User.all.each do |user|
+  user.profile.update(city: Faker::Address.city,
+                      first_name: Faker::Name.first_name,
+                      last_name: Faker::Name.last_name,
+                      phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
+                      postal_code: Faker::Address.postcode,
+                      street: Faker::Address.street_address)
+
+  p "Profile of user #{user.id} seeded"
+end
+
 # == seed an admin ==
 puts 'Seeding admin...'
 if !User.find_by(email: "admin@e-shop.com")
