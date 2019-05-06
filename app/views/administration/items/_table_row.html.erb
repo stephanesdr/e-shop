@@ -5,6 +5,8 @@
 					<tr>
 						<th>ID</th>
 						<th>Produit</th>
+						<th>Visites</th>
+						<th>Commandes</th>
 						<th>Prix de départ</th>
 						<th>Réduction</th>
 						<th>Remise</th>
@@ -19,7 +21,9 @@
 					<%@items.order('id ASC').each do |item| %>
 					<tr>
 						<td><%= item.id%></td>
-						<td><%= link_to(item.name, home_item_path(item.id)) %></td>
+						<td><%= link_to(item.name, administration_item_path(item.id)) %></td>
+						<td><%= item.visit_number%>(<%= item.popularity_indice%>%) </td>
+						<td><%= item.ordered_number%>(<%=item.ordered_indice%>%)</td>
 						<td><%= item.price%> €</td>
 						<td><%= item.discount ? "Oui" : "Non" %></td>
 						<td><%= item.percentage_discount%> %</td>
