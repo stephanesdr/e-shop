@@ -4,7 +4,7 @@ module Home
   class LandingController < HomeController
     def index
       @categories = Category.all
-      @items = Item.all
+      @items = Item.page(params[:page])
       @most_popular_items = Item.most_popular(5)
       return unless current_user
 

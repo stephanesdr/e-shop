@@ -1,6 +1,7 @@
+<div class="pt-2"></div>
 <div class="sticky-top sticky-top-blocknav shadow-sm">
-    <div class="list-group mt-5">
-        <% @categories.each do |category| %>
+    <div class="list-group">
+        <% @categories.alphabet.each do |category| %>
         <div class="list-group-item">
             <%= link_to(home_category_items_path(category.id)) do %>
             <%= category.name %>
