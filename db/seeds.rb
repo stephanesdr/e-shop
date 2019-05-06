@@ -12,32 +12,33 @@ require 'faker'
 require 'csv'
 
 # == seed some users ==
-# puts 'Seeding users...'
-# 1.upto(10) do |i|
-#   email = Faker::Internet.email
-#   next p "User already exist" if User.find_by(email: email)
-#
-#   User.create!(
-#     email: email,
-#     password: Faker::Internet.password(8),
-#     confirmed_at: Time.zone.now
-#   )
-#   p "User #{i} : created"
-# end
-#
-# # == seed an admin ==
-# puts 'Seeding admin...'
-# if !User.find_by(email: "admin@e-shop.com")
-#   User.create!(
-#     email: "admin@e-shop.com",
-#     password: "superpassword",
-#     confirmed_at: Time.zone.now,
-#     admin: true
-#   )
-#   p "Admin created"
-# else
-#   p "Admin already exist"
-# end
+puts 'Seeding users...'
+1.upto(100) do |i|
+  email = Faker::Internet.email
+  next p "User already exist" if User.find_by(email: email)
+
+  User.create!(
+    email: email,
+    password: Faker::Internet.password(8),
+    confirmed_at: Time.zone.now,
+    created_at: rand(1.year.ago..Time.zone.now)
+  )
+  p "User #{i} : created"
+end
+
+# == seed an admin ==
+puts 'Seeding admin...'
+if !User.find_by(email: "admin@e-shop.com")
+  User.create!(
+    email: "admin@e-shop.com",
+    password: "superpassword",
+    confirmed_at: Time.zone.now,
+    admin: true
+  )
+  p "Admin created"
+else
+  p "Admin already exist"
+end
 
 # == scrapping phytodata ==
 # Use of service scrap_phytodb.rb in app/services/
@@ -46,23 +47,13 @@ require 'csv'
 
 # be carful which lign are comment or uncomment
 scrap = ScrapPhytodb.new(false)
-scrap.delete_items_categories
+# scrap.delete_items_categories
 # scrap.perform
 # scrap.seed_items_categories
 # scrap.seed_image_url
 # scrap.export_to_csv
 scrap.seed_from_csv("db/phyto_db_2019-05-01_23:54:22.csv")
 # == -------------------- ==
-
-# == seed some carts ==
-# puts 'Seeding CartItems...'
-# 1.upto(20) do |i|
-#   CartItem.create!(
-#     item_id: Item.all.sample.id,
-#     cart_id: Cart.all.sample.id
-#   )
-#   p "CartItem #{i} : created"
-# end
 
 # == seed images ==
 puts '## Seed images.....................'
@@ -86,6 +77,40 @@ Item.all.each do |item|
   if i == plant.length - 1
     i = 0
   end
+end
+
+# == seed oders ==
+puts 'Seeding orders...'
+1.upto(100) do |j|
+  user = User.find(User.pluck(:id).sample)
+  order = Order.create!(user_id: user.id,
+                        created_at: rand(1.year.ago..Time.zone.now))
+  one_month_ago = Time.zone.now - 60 * 60 * 24 * 30 * 1
+  two_month_ago = Time.zone.now - 60 * 60 * 24 * 30 * 2
+  if order.created_at > two_month_ago && order.created_at < one_month_ago
+    order.update(status: "shipped")
+  end
+  if order.created_at > one_month_ago
+    order.update(status: "delivered")
+  end
+  1.upto(rand(10)) do
+    order.items << Item.find(Item.pluck(:id).sample)
+  end
+
+  p "Order #{j} : created"
+end
+
+# == seed some carts ==
+puts 'Seeding items in carts...'
+User.all.each do |user|
+  1.upto(rand(1..4)) do
+    item = Item.find(Item.pluck(:id).sample)
+    user.cart.items << item
+    quantity = rand(1..3)
+    CartItem.where(cart_id: user.cart.id, item_id: item.id).update(quantity: quantity)
+  end
+
+  p "Cart #{user.cart.id} seeded"
 end
 
 # == Seed with db cis bdpm ==
