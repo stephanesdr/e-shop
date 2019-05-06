@@ -5,7 +5,7 @@ module Home
     def index
       @categories = Category.all
       @items = Item.all
-
+      @most_popular_items = Item.most_popular(5)
       return unless current_user
 
       @products = []

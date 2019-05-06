@@ -16,7 +16,7 @@
       <tbody>
         <%@orders.order('id ASC').each do |order| %>
         <tr>
-          <%= form_for order, url: administration_order_path(order.id), html: { method: :patch } do |f| %>
+
           <td>
             <%= link_to order.id ,administration_order_path(order.id)%>
           </td>
@@ -27,9 +27,9 @@
           </td>
           <td><%= link_to "DOWNLOAD PDF", administration_order_postal_sticker_path(order.id, format: :pdf) %></td>
           <td><%= link_to "DOWNLOAD PDF", administration_order_items_checklist_path(order.id, format: :pdf) %></td>
-
+          <%= form_for order, url: administration_order_path(order.id), html: { method: :patch } do |f| %>
           <td>
-           <%= f.select :status, [["initié",1],["expédié",2]], :selected => order.status %>
+           <%= f.select :status, [["initié",1],["expédié",2]], :selected => order.status, :data_no_turbolink => true , onchange: 'this.form.submit();' %>
           </td>
           <td><%= f.submit "Modifier"  %></td>
           <% end %>
