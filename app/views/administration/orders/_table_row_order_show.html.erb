@@ -21,7 +21,7 @@
           <td><%= item.discount ? "Oui" : "Non" %></td>
           <td><%= item.percentage_discount %></td>
           <td><%= item.reduced_price %> €</td>
-          <td><%= ItemOrder.where(order_id: @order.id).quantity %></td>
+          <td></td>
         </tr>
         <% end %>
       </tbody>

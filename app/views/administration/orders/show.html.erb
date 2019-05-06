@@ -17,7 +17,7 @@
 
       <%= render "table_row_order_show" %>
 
-      <p><%= @order.items.sum("price") %> € </p>
+      <p>TOTAL : <%= @order.items.sum("price") %> € </p>
 
       <%= form_for(@order, url: administration_order_path, html: { method: :patch }) do |f| %>
 
@@ -36,10 +36,10 @@
 
       <p class="mt-4 py-2 text-secondary font-weight-bold h4">Livraison</p>
 
-        <%= @user_profile.first_name %> <%= @user_profile.last_name  %> <br>
-        <%= @user_profile.street %> <br>
-        <%= @user_profile.city %> <br>
-        <%= @user_profile.postal_code %> <br>
+        <em>First name : </em><%= @user_profile.first_name %> <%= @user_profile.last_name  %> <br>
+        <em>Last name : </em><%= @user_profile.street %> <br>
+        <em>City : </em><%= @user_profile.city %> <br>
+        <em>Postal code : </em><%= @user_profile.postal_code %> <br>
 
     </div>
   </div>
