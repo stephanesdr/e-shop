@@ -1,0 +1,20 @@
+<div class="container p-5">
+  <div class="row ml-3">
+
+    <div class="col-12 ml-5">
+      <p class="mt-4 py-2 text-secondary font-weight-bold h4">KPI</p>
+      Nouveaux Utilisateurs
+    <%= line_chart User.group_by_day(:created_at).count, xtitle: "Jour", ytitle: "Nombre" %>
+    <br>
+    Nombre de visites dans la journée
+    <%= line_chart Ahoy::Visit.all.group_by_hour_of_day(:started_at).count, maximum: 23, xtitle: "Heures", ytitle: "Nombre" %>
+    <br>
+    Activités dans la journée
+    <%= line_chart Ahoy::Event.all.group_by_hour_of_day(:time).count, maximum: 23, xtitle: "Heures", ytitle: "Nombre" %>
+    <br>
+    Nombre de visites dans le mois
+    <%= line_chart Ahoy::Visit.group_by_day_of_month(:started_at).count, maximum: 30,  xtitle: "Jours", ytitle: "Nombre" %>
+    <br>
+    </div>
+  </div>
+</div>
