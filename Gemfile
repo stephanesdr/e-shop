@@ -10,6 +10,7 @@ File.read('./.ruby-version')
 
 gem 'dotenv-rails', groups: %i[development test]
 
+gem 'ahoy_matey'
 gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coffee-rails', '~> 4.2'

@@ -13,6 +13,7 @@
 #  price               :float
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  ahoy_visit_id       :bigint(8)
 #
 
 FactoryBot.define do

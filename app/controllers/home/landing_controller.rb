@@ -3,6 +3,7 @@
 module Home
   class LandingController < HomeController
     def index
+      ahoy.track "Landing_page"
       @categories = Category.all
       @items = Item.all
       @most_popular_items = Item.most_popular(5)

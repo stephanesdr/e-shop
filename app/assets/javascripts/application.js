@@ -20,6 +20,7 @@
 //= require template/tables
 //= require classie
 //= require modernizr.custom
+//= require ahoy
 //= require_tree .
 
   $(document).ready(function(){
@@ -27,5 +28,3 @@
     $('.alert').fadeOut();
     }, 2000);
   })
-
-
