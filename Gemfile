@@ -10,12 +10,15 @@ File.read('./.ruby-version')
 
 gem 'dotenv-rails', groups: %i[development test]
 
+gem 'ahoy_matey'
 gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.1.0', require: false
+gem "chartkick"
 gem 'coffee-rails', '~> 4.2'
 gem 'devise', '~> 4.5.0'
 gem 'faker', '~> 1.8', '>= 1.8.7'
 gem 'feathericon-sass'
+gem 'groupdate'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'kaminari'
@@ -23,6 +26,7 @@ gem 'mailjet'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
+gem 'rubocop-performance'
 gem 'sass-rails', '~> 5.0'
 gem 'sidekiq', '~> 5.2.2'
 gem 'stripe'

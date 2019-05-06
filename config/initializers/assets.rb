@@ -10,6 +10,7 @@ Rails.application.config.assets.version = '1.0'
 # Add Yarn node_modules folder to the asset load path.
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w(home.css)
+Rails.application.config.assets.precompile += %w(application.js)
 Rails.application.config.assets.precompile += %w(administration.css)
 Rails.application.config.assets.precompile += %w(checkout_cart.js)
 Rails.application.config.assets.precompile += %w(trigger_modernizr.js)
