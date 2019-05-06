@@ -41,23 +41,24 @@ class CreateAhoyVisitsAndEvents < ActiveRecord::Migration[5.2]
       t.string :os_version
       t.string :platform
 
+      t.datetime :started_at, default: -> { 'CURRENT_TIMESTAMP' }
       t.timestamps
-      t.datetime :started_at
     end
 
     add_index :ahoy_visits, [:visit_token], unique: true
 
     create_table :ahoy_events do |t|
-      t.timestamps
-      t.datetime :time
       t.references :visit
       t.references :user
 
       t.string :name
       t.jsonb :properties
+
+      t.datetime :time, default: -> { 'CURRENT_TIMESTAMP' }
+      t.timestamps
     end
 
     add_index :ahoy_events, %i[name time]
-    add_index :ahoy_events, "properties ", using: "gin", opclass: :jsonb_path_ops
+    add_index :ahoy_events, "properties", using: "gin", opclass: :jsonb_path_ops
   end
 end
