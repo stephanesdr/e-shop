@@ -5,7 +5,7 @@
 		<div class="card card-items product-grid">
 			<div class="product-image">
 				<%= link_to(home_item_path(item.id)) do %>
-				<img class="card-img-top" src="https://via.placeholder.com/150.png/4e4e4f" alt="">
+				<img class="card-img-top" src="<%= image_url(item.image_url) %>" alt="<%= item.name %>" size="300">
 				<% end %>
 
 				<ul class="social">

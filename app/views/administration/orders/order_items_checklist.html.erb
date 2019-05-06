@@ -1,0 +1,67 @@
+<center>  <h1>CHECKLIST</h1> </center>
+
+<div class="container">
+  <div class="row">
+    <div class="logo col">
+        <h3>Order #<%=@order.id%></h3>
+        <h3>Effectuée le : <br>
+          <%=@order.created_at.asctime%></h3>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="container">
+  <div class="row">
+
+    <div class="logo col">
+
+      <h3>
+        CLIENT : <br>
+        user #<%=@user.id%><br>
+        <%= @user_profile.first_name  %> <%= @user_profile.last_name  %><br>
+        <%= @user_profile.phone_number  %><br>
+        <%= @user.email  %><br>
+      </h3>
+
+    </div>
+
+    <div class="logo col">
+    </div>
+
+    <div class="logo col">
+      <h3>
+        LIVRAISON : <br>
+        <%= @user_profile.street%><br>
+        <%= @user_profile.postal_code  %> <br>
+        <%= @user_profile.city  %><br>
+      </h3>
+    </div>
+</div>
+
+<br><br>
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th>Item_ID</th>
+      <th>Item_name</th>
+      <th>Quantité</th>
+      <th>Empacté</th>
+      <th>Remarques</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%@items.uniq.each do |item|%>
+    <tr>
+
+
+    <td><%= item.id %></td>
+    <td><%= item.name %></td>
+    <td><%= @order.items.to_a.count(item) %></td>
+    <td><input type="checkbox"></td>
+    <td></td>
+    </tr>
+
+    <%end%>
+
+    </tbody>
