@@ -3,24 +3,24 @@
 
     <div class="col-12 ml-5">
       <p class="mt-4 py-2 text-secondary font-weight-bold h4">KPI</p>
-      Nouveaux Utilisateurs
+      <u><h4>Nouveaux Utilisateurs</h4></u>
     <%= column_chart User.group_by_day(:created_at, format: "%a %d %b").count, xtitle: "Jour", ytitle: "Nombre" %>
     <br>
-    Nombre de visites dans la journée
+    <u><h4>Nombre de visites dans la journée</h4></u>
     <%= column_chart Ahoy::Visit.all.group_by_hour(:started_at, last: 24, format: "%H h").count, xtitle: "Heures", ytitle: "Nombre" %>
     <br>
-    Activités dans la journée
+    <u><h4>Activités dans la journée</h4></u>
     <%= line_chart Ahoy::Event.where(name: "Home action").group_by_hour(:time,  last: 24 ,format: " %H h").count,  xtitle: "Heures", ytitle: "Nombre" %>
     <br>
-    Nombre de visites dans le mois
+    <u><h4>Nombre de visites dans le mois</h4></u>
     <%= column_chart Ahoy::Visit.group_by_day_of_month(:started_at).count,stacked: true, maximum: 31,  xtitle: "Jours", ytitle: "Nombre" %>
     <br>
 
-    Profits journaliers (€)
+    <u><h4>Profits journaliers (€)</h4></u>
      <%= column_chart @data_gain_hash %>
     <br><br>
 
-    Répartition des produits les plus commandés
+    <u><h4>Répartition des produits les plus commandés
     <%= bar_chart @data_product_hash , suffix: "%" %>
 
 

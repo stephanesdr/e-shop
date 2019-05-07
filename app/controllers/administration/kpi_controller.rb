@@ -10,8 +10,9 @@ module Administration
 
       @data_gain_hash = Order.group_by_day(:created_at).count
       @data_gain_hash.each_key do |key|
+        @data_gain_hash[key] = 0
         Order.where(created_at: key.midnight..key.end_of_day).each do |order|
-          @data_gain_hash[key] += order.items.sum("price")
+          @data_gain_hash[key] += order.items.sum("price").round(2)
         end
       end
       # @data_gain_hash.each_key { |key| key = key.strftime("%a %d %b") }
