@@ -65,5 +65,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :address => "localhost",
     :port => 1030
-  }  
+  }
+
+  #config.time_zone = 'Paris' # Your local time zone
+  #config.active_record.default_timezone = :local
+  #config.active_record.time_zone_aware_attributes = false
 end

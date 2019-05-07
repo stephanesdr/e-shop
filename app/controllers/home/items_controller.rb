@@ -4,6 +4,7 @@ module Home
   class ItemsController < HomeController
     def show
       @item = Item.find(params[:id])
+      ahoy.track "Show_item", item_id: @item.id
 
       return unless current_user
 

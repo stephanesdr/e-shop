@@ -1,6 +1,10 @@
-<div class="card-group mt-5">
-	<% @items.each do |item| %>
+<div class=" col-12 pagination__stick pt-5">
+	<%= paginate @items %>
+</div>
 
+<div class="card-group">
+	<% @items.each do |item| %>
+	
 	<div class="col-lg-4 col-md-6 mb-4">
 		<div class="card card-items product-grid">
 			<div class="product-image">
