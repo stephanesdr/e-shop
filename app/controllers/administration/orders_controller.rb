@@ -58,7 +58,11 @@ module Administration
     def update
       puts params
       @order = Order.find(params[:id])
-      @order.update(status: params[:order][:status].to_i)
+      if @order.update(status: params[:order][:status].to_i)
+        flash[:notice] = "Order status updated successfully"
+      else
+        flash[:danger] = "Order status update abort"
+      end
       redirect_to request.referer
       puts @order.status
       if @order.status == "shipped"

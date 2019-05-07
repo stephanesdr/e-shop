@@ -11,7 +11,8 @@
           <th>Total</th>
           <th>Etiquette Postale</th>
           <th>Facture</th>
-          <th>Status</th>
+          <th>Statut</th>
+          <th>Edition</th>
         </tr>
       </thead>
       <tbody>
@@ -31,7 +32,12 @@
           <td><%= order.items.sum("price")%> € </td>
           <td><%= link_to "DOWNLOAD PDF", administration_order_postal_sticker_path(order.id, format: :pdf) %></td>
           <td><%= link_to "DOWNLOAD PDF", home_order_invoice_path(order.id, format: :pdf) %></td>
-          <td><%= order.status%></td>
+          <td>
+            <%= if order.status == 'initiated' then 'Initiée' end %>
+            <%= if order.status == 'shipped' then 'Expédiée' end %>
+            <%= if order.status == 'delivered' then 'Livrée' end %>
+          </td>
+          <td><%= link_to "Editer", administration_order_path(order.id) %></td>
         </tr>
         <% end%>
       </tbody>
