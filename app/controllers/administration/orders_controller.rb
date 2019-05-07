@@ -63,7 +63,7 @@ module Administration
       else
         flash[:danger] = "Order status update abort"
       end
-      redirect_to administration_orders_path
+      redirect_to request.referer
       puts @order.status
       if @order.status == "shipped"
         UserMailer.shipped_email(@order).deliver_now
