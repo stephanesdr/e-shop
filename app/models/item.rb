@@ -13,9 +13,11 @@
 #  price               :float
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  ahoy_visit_id       :bigint(8)
 #
 
 class Item < ApplicationRecord
+  visitable :ahoy_visit
   has_many :category_items, dependent: :destroy
   has_many :categories, through: :category_items
   has_many :cart_items, dependent: :destroy
@@ -35,5 +37,21 @@ class Item < ApplicationRecord
     ItemOrder.all.find_each { |itm_ord| arr << itm_ord.item }
     freq = arr.each_with_object(Hash.new(0)) { |v, h| h[v] += 1; }
     Hash[freq.sort_by{ |_k, v| -v }.first(number_of_items)].keys
+  end
+
+  def visit_number
+    Ahoy::Event.where(properties: { "item_id" => id }).count
+  end
+
+  def popularity_indice
+    (visit_number.to_f / Ahoy::Event.where(name: "Show_item").count.to_f).round(2) * 100
+  end
+
+  def ordered_number
+    ItemOrder.where(item_id: id).count
+  end
+
+  def ordered_indice
+    (ordered_number.to_f / ItemOrder.all.count.to_f).round(2) * 100
   end
 end

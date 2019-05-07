@@ -1,17 +1,22 @@
-<div class="row" style="height: 100vh;">
-  <%= render "layouts/landing/presentation" %>
-</div>
+<!-- Full Page Image Header with Vertically Centered Content -->
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+        <p class="lead">
+          <%= render "layouts/landing/presentation" %>
+          <%= render "layouts/landing/best_products" %>
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
 
-<div class="row" style="height: 100vh;">
-  <%= render "layouts/landing/best_products" %>
-</div>
 
 
 
-
-<div class="row pt-5">
-
-      <div class="col-lg-3">
+<div class="row p-5">
+      <div class="col-lg-3 pt-5">
           <%= render "layouts/landing/product_categories" %>
       </div>
 
@@ -21,8 +26,8 @@
         </div>
 
       </div>
-
     </div>
+
     <% if current_user %>
 	    <%= render "layouts/landing/checkout_cart" %>
       <%= javascript_include_tag 'checkout_cart' %>

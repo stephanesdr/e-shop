@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       get '/postal_sticker/', to: 'orders#postal_sticker'
       get '/items_checklist/', to: 'orders#items_checklist'
     end
+    resources :kpi, only: %i[index]
     resources :items, only: %i[index show update create new edit destroy]
     resources :users
   end

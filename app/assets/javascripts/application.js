@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require Chart.bundle
+//= require chartkick
 //= require activestorage
 //= require turbolinks
 //= require template/app
@@ -20,6 +22,7 @@
 //= require template/tables
 //= require classie
 //= require modernizr.custom
+//= require ahoy
 //= require_tree .
 
   $(document).ready(function(){
@@ -27,5 +30,3 @@
     $('.alert').fadeOut();
     }, 2000);
   })
-
-

@@ -9,7 +9,13 @@ module Home
                  else
                    params[:quantity].to_i
                  end
-      CartItem.create(cart_id: current_user.cart.id, item_id: @item.id, quantity: quantity)
+      if CartItem.where(item_id: @item.id, cart_id: current_user.cart.id).exists?
+        existant_article = CartItem.where(item_id: @item.id, cart_id: current_user.cart.id).first
+        new_quantity = existant_article.quantity + quantity
+        existant_article.update(quantity: new_quantity)
+      else
+        CartItem.create(cart_id: current_user.cart.id, item_id: @item.id, quantity: quantity)
+      end
 
       respond_to do |format|
         format.js
