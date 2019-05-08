@@ -3,7 +3,7 @@
     <div class="list-group">
         <% @categories.alphabet.each do |category| %>
         <div class="list-group-item">
-            <%= link_to(home_category_items_path(category.id)) do %>
+            <%= link_to(home_category_path(category.id)) do %>
             <%= category.name %>
             <% end %>
         </div>
