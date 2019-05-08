@@ -1,42 +1,45 @@
-
-
-
 <div class="container p-5">
   <div class="row ml-3">
 
     <div class="col-12 ml-5">
       <p class="mt-4 py-2 text-secondary font-weight-bold h4">Commandes</p>
 
-      <%=@order.id%><br>
-      <%=@order.created_at.asctime%><br>
-      <%=@order.status%><br>
-      <%@order.items.each do |itm|%>
-        <%=itm.name%><br>
-      <%end%>
-      <%= @order.items.sum("price")%> € <br>
+      <p>
+        Commande <%= @order.id %>
+        créée à <%= @order.created_at.asctime %>
+      </p>
+      <p>
+        Statut de la commande :
+        <%= if @order.status == 'initiated' then 'Initiée' end %>
+        <%= if @order.status == 'shipped' then 'Expédiée' end %>
+        <%= if @order.status == 'delivered' then 'Livrée' end %>
+      </p>
+
+      <%= render "table_row_order_show" %>
+
+      <p>TOTAL : <%= @order.items.sum("price") %> € </p>
 
       <%= form_for(@order, url: administration_order_path, html: { method: :patch }) do |f| %>
 
-        <%= f.radio_button :status, 0 %>
-        <%= label :status_0, 'initiated' %>
-        <%= f.radio_button :status, 1 %>
-        <%= label :status_1, 'shipped' %>
-        <%= f.radio_button :status, 2 %>
-        <%= label :status_2, 'delivered' %>
+        <%= f.radio_button :status, 0, checked: @order.status == 'initiated' %>
+        <%= label :status_0, 'Initiée' %>
+        <%= f.radio_button :status, 1, checked: @order.status == 'shipped' %>
+        <%= label :status_1, 'Expédiée' %>
+        <%= f.radio_button :status, 2, checked: @order.status == 'delivered' %>
+        <%= label :status_2, 'Livrée' %>
 
         <div class="actions">
-        <%= f.submit "Editer", class:"btn btn-info btn-lg my-3" %>
-
+        <%= f.submit "Sauvegarder", class:"btn btn-info btn-lg my-3" %>
         </div>
 
       <% end %>
 
       <p class="mt-4 py-2 text-secondary font-weight-bold h4">Livraison</p>
 
-        <%= @user_profile.first_name  %> <%= @user_profile.last_name  %> <br>
-        <%= @user_profile.street  %> <br>
-        <%= @user_profile.city  %> <br>
-        <%= @user_profile.postal_code  %> <br>
+        <em>First name : </em><%= @user_profile.first_name %> <%= @user_profile.last_name  %> <br>
+        <em>Last name : </em><%= @user_profile.street %> <br>
+        <em>City : </em><%= @user_profile.city %> <br>
+        <em>Postal code : </em><%= @user_profile.postal_code %> <br>
 
     </div>
   </div>
