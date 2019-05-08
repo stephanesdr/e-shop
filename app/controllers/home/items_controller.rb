@@ -15,8 +15,9 @@ module Home
   end
 
   def index
-    # @category = Category.find(params["category_id"])
+    puts params
+    @category = Category.find(params["category_id"])
     # @items = @category.items
-    @items = Item.all
+    @hello = "helllo"
   end
 end
