@@ -1,0 +1,11 @@
+<%= form_tag(home_search_index_path, method: :post) do %>
+<div class="row">
+  <div class="col-md-6">
+<%= text_field_tag 'search', @search, class: 'search' %>
+  </div>
+  <div class="col-md-6">
+ <%= submit_tag "Recherche", class: 'btn btn-info btn-submit ml-4' %>
+ </div>
+</div>
+
+<% end %>
