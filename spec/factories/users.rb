@@ -29,6 +29,7 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { "password" }
     password_confirmation { "password" }
+    admin { false }
     confirmed_at { Time.zone.today }
   end
 end

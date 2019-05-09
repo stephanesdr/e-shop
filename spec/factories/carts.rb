@@ -20,6 +20,6 @@
 
 FactoryBot.define do
   factory :cart do
-    user_id { 1 }
+    user { FactoryBot.create(:user) }
   end
 end

@@ -15,7 +15,6 @@ module Administration
           @data_gain_hash[key] += order.items.sum("price").round(2)
         end
       end
-      # @data_gain_hash.each_key { |key| key = key.strftime("%a %d %b") }
     end
   end
 end
