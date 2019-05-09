@@ -40,7 +40,7 @@ module Home
       else
         flash[:notice] = "Profile edition succeed"
       end
-      redirect_to home_profile_path(current_user.profile.id)
+      redirect_to request.referer
     end
   end
 end

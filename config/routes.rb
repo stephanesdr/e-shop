@@ -19,7 +19,8 @@ Rails.application.routes.draw do
     resources :items, only: %i[index show] do
       resources :cart_items, only: %i[create]
     end
-    resources :payments, only: %i[index]
+    
+    resources :payments, only: %i[index edit update]
   end
 
   namespace 'administration' do
