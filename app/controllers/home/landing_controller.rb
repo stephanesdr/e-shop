@@ -6,7 +6,7 @@ module Home
       # ahoy.track "Landing_page"
       @categories = Category.all
       @items = Item.page(params[:page])
-      @most_popular_items = Item.most_popular(5)
+      @most_popular_items = Item.most_popular(4)
       return unless current_user
 
       @products = []
