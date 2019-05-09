@@ -1,16 +1,31 @@
+<div class="" style="width: 100%">
+  <div class="container">
+    <h2 class=""> MEILLEURES VENTES :</h2>
+    <div class="card-group">
 
-    <h4 class="display-4"> MEILLEURES VENTES :</h4>
       <% @most_popular_items.each do |item| %>
-  
-              <img  src="<%= image_url(item.image_url) %>" alt="<%= item.name %>" width="300"  height= "200">
- 
-                <p class="lead"><%=item.name%></p>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card card-items product-grid">
+
+      			<div class="product-image">
+              <img src="<%= image_url(item.image_url) %>" alt="<%= item.name %>" height="100">
+            </div>
+
+            <div class="card-img-overlay card-body product-content pt-4 text-center">
+      				<h4 class="card-title text-white">
                 <%= link_to home_item_path(item.id) , class: "cbutton cbutton--effect-ivana" do %>
-                  <span class="font-weigh-bold btn btn-info btn-lg">Découvrir</span>
+                  <span class="font-weigh-bold btn btn-info">Découvrir</span>
                 <% end %>
+      				</h4>
+            </div>
+            <h4 class="card-title">
+              <p class="lead"><%=item.name%></p>
+            </h4>
 
+          </div>
+        </div>
       <% end %>
+    </div>
   </div>
-
-
-
+</div>
