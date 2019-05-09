@@ -5,12 +5,9 @@
           </h3>
 
          <% else @item.discount == true %>
-
          <h4 class="font-weight-light">
-            <%= @item.price %>€
-          <%= @item.reduced_price%> € (-
-        <%= @item.percentage_discount %> %)
+            <strike class="text-muted"><%= @item.price %>€</strike>
+          <%= @item.reduced_price%>€
         </h4>
-        
-    <% end %>
 
+    <% end %>
