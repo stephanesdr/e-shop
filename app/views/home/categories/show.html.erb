@@ -1,0 +1,24 @@
+<!-- Full Page Image Header with Vertically Centered Content -->
+
+
+
+    <h1 class="display-4 jumbo-title" align="center"><%= @category.name %> </h1>
+  <!-- /.container -->
+<!-- /.jumbotron -->
+<div class="row">
+      <div class="col-lg-3 pt-5">
+          <%= render "layouts/landing/product_categories" %>
+      </div>
+
+      <div class="col-lg-9">
+       <div class="row">
+          <%= render "layouts/landing/product" %>
+        </div>
+
+      </div>
+    </div>
+
+    <% if current_user %>
+	    <%= render "layouts/landing/checkout_cart" %>
+      <%= javascript_include_tag 'checkout_cart' %>
+  <% end %>
