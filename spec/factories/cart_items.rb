@@ -24,7 +24,7 @@
 
 FactoryBot.define do
   factory :cart_item do
-    cart_id { 1 }
-    item_id { 1 }
+    cart { FactoryBot.create(:cart) }
+    item { FactoryBot.create(:item) }
   end
 end

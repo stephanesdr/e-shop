@@ -23,5 +23,7 @@ FactoryBot.define do
     price { Faker::Number.decimal(2) }
     discount { false }
     percentage_discount { 0 }
+    image_url { "yo.jpg" }
+    ahoy_visit_id { nil }
   end
 end
