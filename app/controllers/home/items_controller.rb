@@ -13,10 +13,4 @@ module Home
       CartItem.where(cart_id: @cart.id).each { |cart_item| @products << cart_item.item }
     end
   end
-
-  def index
-    # @category = Category.find(params["category_id"])
-    # @items = @category.items
-    @items = Item.all
-  end
 end
