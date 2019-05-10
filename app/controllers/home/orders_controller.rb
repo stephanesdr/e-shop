@@ -2,6 +2,8 @@
 
 module Home
   class OrdersController < ApplicationController
+    before_action :authenticate_user!
+
     def destroy
       @order = Order.find(params[:id])
       Order.delete(@order)

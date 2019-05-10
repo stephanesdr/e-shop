@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Administration::UsersController, type: :controller do
+  login_admin
   describe "GET #index" do
     let(:user) { create(:user) }
 
@@ -18,7 +19,7 @@ RSpec.describe Administration::UsersController, type: :controller do
 
     it "assigns all users as users" do
       get :index
-      expect(assigns(:users)).to eq([user])
+      expect(assigns(:users)).to eq(User.all)
     end
   end
 end
