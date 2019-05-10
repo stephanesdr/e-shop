@@ -14,6 +14,7 @@ $warning: #f76464;
   color: $warning;
 }
 
+body { background-color: whitesmoke;}
 .main {
   width: 100%;
   width: -moz-available;
@@ -324,6 +325,10 @@ a.subtitle-devise {
   text-align: left;
   display: inline-block;
   margin-top: -2px
+}
+
+.search {
+  width: 170px;
 }
 
 

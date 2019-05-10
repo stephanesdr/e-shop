@@ -1,68 +1,17 @@
-<div class="row row-devise align-items-center">
-  <div class="mx-auto text-center">
-
-  <h2 class="my-5">Vérifiez si vos informations sont bien à jour</h2>
-
-  <div class="card card-devise p-5">
-  <%= form_for(@profile, url: home_profile_path(@profile.id), html: { method: :patch }) do |f| %>
-
-  <div class="field col-12 pb-3">
-  <%= f.label :first_name %><br />
-  <%= f.text_field :first_name, autofocus: true, autocomplete: "first name" %>
-  </div>
-
-  <div class="field col-12 pb-3">
-  <%= f.label :last_name %><br />
-  <%= f.text_field :last_name, autocomplete: "last name" %>
-  </div>
-
-  <div class="field col-12 pb-3">
-  <%= f.label :phone_number %><br />
-  <%= f.text_field :phone_number, autocomplete: "phone number" %>
-  </div>
-
-  <div class="field col-12 pb-3">
-  <%= f.label :address %><br />
-  <%= f.text_field :street, autocomplete: "street" %>
-  </div>
-
-  <div class="field col-12 pb-3">
-  <%= f.label :postal_code %><br />
-  <%= f.text_field :postal_code, autocomplete: "postal_code" %>
-  </div>
-
-  <div class="field col-12 pb-3">
-  <%= f.label :city %><br />
-  <%= f.text_field :city, autocomplete: "city" %>
-  </div>
-
-  <div class="actions">
-  <%= f.submit "Editer", class:"btn btn-info btn-lg my-3" %>
-  </div>
-  <% end %>
-  <%= link_to "Back", root_path %>
-  </div>
-  <h3>Somme : <%=@cart.sum_price%> €</h3>
-
-
-
-<%= form_tag home_orders_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
+<div class="container" style="width: 60vw;">
+  <div class="card p-5 mt-5 shadow-lg rounded d-border">
+    <div class="row pt-3">
+      <div class="col-4">
+        <%= render "layouts/payments/image_payment" %>
       </div>
-    <% end %>
-  </article>
+      <div class="col-8 px-4">
+        <%= render "layouts/payments/description_payment" %>
+      </div>
+    </div>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description= <%=Time.now %>
-          data-amount=  <%=@amount%>
-          data-locale= "auto"
-          data-currency= "eur"
-          data-email = <%=@user.email%> > </script>
-  <%end %>
 
-</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

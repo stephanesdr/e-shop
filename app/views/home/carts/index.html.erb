@@ -46,7 +46,7 @@
 
         <% if !@cart.items.empty? %>
 
-        <h3><%= link_to "Passer à la page de payement", home_payments_path, method: "get" %></h3>
+        <h3><%= link_to "Passer à la page de payement", edit_home_payment_path(current_user.profile.id), method: "get" %></h3>
 
         <% end%>
 </div>
