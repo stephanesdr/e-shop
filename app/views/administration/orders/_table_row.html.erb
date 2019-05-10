@@ -10,12 +10,12 @@
           <th data-sortable="true">Date</th>
           <th data-sortable="true">Identifiant Stripe</th>
           <th data-sortable="true">Client</th>
-          <th data-sortable="true">Nb Articles</th>
+          <th data-sortable="true">Articles</th>
           <th data-sortable="true">Total</th>
           <th data-sortable="true">Etiquette Postale</th>
           <th data-sortable="true">Facture</th>
           <th data-sortable="true">Statut</th>
-          <th data-sortable="true">Edition</th>
+          <th>Edition</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +25,18 @@
           <td><%= order.created_at_french %></td>
           <td><%= order.stripe_customer_id %></td>
           <td><%= order.user.email %></td>
-          <td><%= order.items.count %></td>
+          <td>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Articles
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <% order.items.each do |item| %>
+                  <a class="dropdown-item" href=""><%= item.name %></a>
+                <% end %>
+              </div>
+            </div>
+          </td>
           <td><%= order.items.sum("price") %> € </td>
           <td><%= link_to "PDF", administration_order_postal_sticker_path(order.id, format: :pdf) %></td>
           <td><%= link_to "PDF", home_order_invoice_path(order.id, format: :pdf) %></td>
