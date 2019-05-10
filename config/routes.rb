@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :cart_items, only: %i[create]
     end
     resources :payments, only: %i[index]
+    resources :search, only: %i[index]
   end
 
   namespace 'administration' do
