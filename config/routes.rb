@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
     resources :payments, only: %i[index edit update]
     resources :search, only: %i[index]
+    resources :discount, only: %i[index]
   end
 
   namespace 'administration' do
