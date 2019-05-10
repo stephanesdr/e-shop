@@ -9,7 +9,11 @@
 		<div class="card card-items product-grid">
 			<div class="product-image">
 				<%= link_to(home_item_path(item.id)) do %>
-				<img class="card-img-top" src="<%= image_url(item.image_url) %>" alt="<%= item.name %>" size="300">
+					<% if item.picture.attached? %>
+					  <%= image_tag item.picture, alt: 'picture', class: 'picture' %>
+					<% else %>
+					  <img class="card-img-top" src="<%= image_url(item.image_url) %>" alt="<%= item.name %>" size="300">
+					<% end %>
 				<% end %>
 
 				<ul class="social">
