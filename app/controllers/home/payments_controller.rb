@@ -24,6 +24,5 @@ module Home
       end
       redirect_to home_payments_path(current_user.cart.id)
     end
-
   end
 end

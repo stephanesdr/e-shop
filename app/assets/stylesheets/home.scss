@@ -91,6 +91,22 @@ input {
   text-align: center;
 }
 
+.input-profile {
+
+  font-size: 1.3em;
+    color: #767575;
+    border: 0;
+    border-bottom: 1px solid #f5f5f5;
+    font-family: inherit;
+    border-radius: 0;
+    padding: 0;
+    cursor: text;
+    text-align: left;
+    width: 100%;
+    box-shadow: 2px 7px 10px -5px whitesmoke;
+
+}
+
 input:focus {
   outline: 0;
   border-bottom: 1px solid #666;
