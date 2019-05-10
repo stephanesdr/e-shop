@@ -5,8 +5,11 @@
 			<div class="col-10 ml-5">
 			<p class="mt-4 py-2 text-secondary font-weight-bold h4">Clients</p>
 				<div class="card card-admin">
+
+					<input type="text" id="myInput" onkeyup="searchBarTables()" placeholder="Rechercher un client par adresse email..." title="Rentrer une adresse email">
+
 					<div class="table-responsive">
-						<table data-toggle="table" class="table table-striped table-hover">
+						<table id="myTable" data-toggle="table" class="table table-striped table-hover">
 							<thead>
 								<tr>
 									<th data-sortable="true">Id</th>
