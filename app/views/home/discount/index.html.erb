@@ -1,8 +1,10 @@
 <!-- Full Page Image Header with Vertically Centered Content -->
+<% if @items.count.zero? %>
+<h1> Il n'y a pas de promotions en ce moment, revenez plus tard !</h1>
+<% else %>
 
 
-
-    <h1 class="display-4 jumbo-title" align="center"> Résultat(s) de la recherche </h1>
+    <h1 class="display-4 jumbo-title" align="center">En promotion</h1>
   <!-- /.container -->
 <!-- /.jumbotron -->
 <div class="row p-5">
@@ -18,7 +20,7 @@
 
       </div>
     </div>
-
+<% end %>
     <% if current_user %>
 	    <%= render "layouts/landing/checkout_cart" %>
       <%= javascript_include_tag 'checkout_cart' %>

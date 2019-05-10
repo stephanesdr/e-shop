@@ -11,6 +11,7 @@ module Home
     def show
       @item = Item.find(params[:id])
       ahoy.track "Show_item", item_id: @item.id
+      @categories = @item.categories
 
       return unless current_user
 

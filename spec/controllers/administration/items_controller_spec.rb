@@ -49,16 +49,27 @@ RSpec.describe Administration::ItemsController, type: :controller do
     end
   end
 
-  # context "with valid params" do
-  #   before do
-  #     post :create, params: params
-  #   end
-  #
-  #   it "assigns a newly created post as @item" do
-  #     expect(assigns(:item)).to be_a(Item)
-  #     expect(assigns(:item)).to be_persisted
-  #     expect(item.discount).to eq(percentage_discount > 0)
-  #     expect(Item.count).to eq(1)
-  #   end
-  # end
+  context "with valid params" do
+    before do
+      post :create, params: { description: Faker::Movies::StarWars.quote,
+                              image_url: "polo_a_poil.jpg",
+                              price: Faker::Number.decimal(2),
+                              title: Faker::House.unique.furniture,
+                              category_id: rand(1..4),
+                              discount: false,
+                              percentage_discount: 0 }
+    end
+
+    it "assigns a newly created post as @item" do
+      expect(assigns(:item)).to be_a(Item)
+    end
+
+    it "create a persistant item" do
+      expect(assigns(:item)).to be_persisted
+    end
+
+    it "add one more item" do
+      expect(Item.count).to eq(2)
+    end
+  end
 end
