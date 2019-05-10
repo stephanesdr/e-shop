@@ -36,11 +36,12 @@
 						<div class="h4 text-info">
 							Categories
 						</div>
+
 						<div class="row flex-row d-flex text-center justify-content-between">
 							<% @categories.each do |category| %>
 							<div class="col">
 								<%= label_tag category.name %>
-								<%= check_box_tag "category_ids []", category.id %>
+								<%= check_box_tag "category_ids[]", category.id %>
 							</div>
 							<% end %>
 						</div>

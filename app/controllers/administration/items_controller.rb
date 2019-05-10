@@ -17,8 +17,9 @@ module Administration
 
     def create
       @item = Item.create(name: params[:name], description: params[:description], percentage_discount: params[:percentage_discount], price: params[:price] )
-      @item.picture.attach(params[:picture])
-      @item.discount = @item.positive?
+      @item.picture.attach(params[:picture]) if !params[:picture].nil?
+      @item.discount = @item.percentage_discount.positive?
+      # puts "params[:category_ids] => \n #{params[:category_ids]}"
       if !params[:category_ids].nil?
         @categories = Category.find(params[:category_ids])
         @categories.each { |category| CategoryItem.create(item_id: @item.id, category_id: category.id) } if !@categories.empty?
