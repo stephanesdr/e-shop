@@ -31,7 +31,7 @@
     }, 2000);
   })
 
-
+// Search function for tables in views/administration/
   function searchBarTables() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
@@ -51,6 +51,7 @@
     }
   }
 
+  // Search function for tables in views/administration/orders
   function searchBarOrders() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
@@ -70,6 +71,7 @@
     }
   }
 
+  // Search function for tables in views/administration/orders
   function searchBarSendingRoom() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
