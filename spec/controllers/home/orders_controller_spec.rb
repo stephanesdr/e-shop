@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Home::OrdersController, type: :controller do
   # pending "add some examples to (or delete) #{__FILE__}"
-
+  login_user
   describe "GET #show" do
     let(:order) { create(:order) }
 

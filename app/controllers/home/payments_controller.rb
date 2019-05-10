@@ -2,6 +2,7 @@
 
 module Home
   class PaymentsController < HomeController
+    before_action :authenticate_user!
     def index
       @user = current_user
       @cart = current_user.cart
