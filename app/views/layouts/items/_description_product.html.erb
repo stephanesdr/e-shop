@@ -18,5 +18,5 @@
     <div class="content-product">
 
     <b class="font-weight-bold"> Soigne :</b>
-      <p><% @categories.each do |category| %><%= link_to(category.name, home_category_path(category.id)) %>/ <% end %></p>
+      <p><% @item.categories.each do |category| %><%= link_to(category.name, home_category_path(category.id)) %> / <% end %></p>
     </div>
