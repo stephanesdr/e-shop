@@ -159,6 +159,7 @@ class ScrapPhytodb
                          discount: false,
                          percentage_discount: 0)
       row[3].gsub(160.chr("UTF-8"), " ").split(' , ').each do |disease|
+        disease.strip!
         item.categories << (Category.find_by(name: disease) || Category.create(name: disease))
       end
     end
