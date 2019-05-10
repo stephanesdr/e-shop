@@ -27,26 +27,23 @@
 							<th>Item</th>
 							<th>QTY</th>
 							<th>Price</th>
-							<!--	<th>&nbsp;</th>-->
+							<th>&nbsp;</th>
 						</tr>
 					</thead>
 					<tbody>
 						<% current_user.cart.cart_items.each do |cart_item| %>
 						<tr>
 							<td><%= cart_item.item.name %>
-								<span>
-									<% cart_item.item.categories.each do|cat| %>
-									<%=cat.name %>
-									<%end%>
-								</span>
 							</td>
 							<td><%= cart_item.quantity %></td>
 							<td><%= cart_item.price %></td>
-							<!--	<td>
-<button class="checkout__action">
-<i class="icon fa fa-trash"></i>
-</button>
-</td>-->
+							<td>
+						 <button class="checkout__action">
+            <%= link_to(home_landing_path(cart_item.id), :method => :delete,  data: { confirm: 'Are you sure ?' }) do %>
+                <i class="icon fa fa-trash"></i>
+                   <% end %>
+                </button>
+							</td>
 						</tr>
 						<% end %>
 					</tbody>
