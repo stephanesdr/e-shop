@@ -18,11 +18,15 @@
       </button>
 
       <div class="collapse navbar-collapse" id="links">
-        
+
       </div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "promotions", home_discount_index_path, class: "nav-link text-warning" %>
+        </li>
       <% if current_user %>
       <div class="collapse navbar-collapse" id="account">
-        <ul class="navbar-nav ml-auto">
+
           <% if current_user.admin %>
           <li class="nav-item">
             <%= link_to "Admin dashboard", administration_admin_path, class: "dropdown-item nav-link" %>
