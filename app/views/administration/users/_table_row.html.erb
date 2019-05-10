@@ -1,8 +1,8 @@
 <%= form_for user, url: administration_user_url(user.id), html: {class: ""} do |f| %>
 	<tr>
-		<td> <%= user.id %></td>
-		<td> <%= user.email %></td>
-		<td> <%= user.admin %></td>
+		<td><%= user.id %></td>
+		<td><%= user.email %></td>
+		<td><%= user.admin ? "Oui" : "Non" %></td>
 		<td><a href="<%= edit_administration_user_path(user.id) %>" class="">Editer</a></td>
 		<td><%= link_to "SUPPRIMER", administration_user_path(user.id), :method => :delete,  data: { confirm: 'Etes-vous sûr de vouloir supprimer cet utilisateur ?' } %>
 	</tr>

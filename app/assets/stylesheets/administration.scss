@@ -25,3 +25,14 @@
     position: fixed;
     margin-top: 18px;
 }
+
+// for bootstrapp tables
+
+@import url('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');
+table, thead, tr, tbody, th, td {
+  text-align: center;
+}
+
+.column-max-width {
+  max-width: 200px;
+}
