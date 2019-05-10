@@ -4,12 +4,11 @@
     <div class="col-12 ml-5">
       <p class="mt-4 py-2 text-secondary font-weight-bold h4">Commandes</p>
 
+      <p><em>Id de la commande : </em><%= @order.id %></p>
+      <p><em>Date de création : </em><%= @order.created_at_french %></p>
+
       <p>
-        Commande <%= @order.id %>
-        créée à <%= @order.created_at.asctime %>
-      </p>
-      <p>
-        Statut de la commande :
+        <em>Statut de la commande :</em>
         <%= if @order.status == 'initiated' then 'Initiée' end %>
         <%= if @order.status == 'shipped' then 'Expédiée' end %>
         <%= if @order.status == 'delivered' then 'Livrée' end %>
