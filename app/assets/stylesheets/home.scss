@@ -195,7 +195,7 @@ a.subtitle-devise {
   height: 81%;
   width: 100%;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, .1);
+  // border: 1px solid rgba(0, 0, 0, .1);
   opacity: 0;
   position: absolute;
   top: 0;
@@ -207,7 +207,7 @@ a.subtitle-devise {
 .product-grid:hover:before {
   opacity: 1;
   height: 100%;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  // box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
 .product-grid .product-image {
