@@ -6,7 +6,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,700);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,500,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700);
 
 $warning: #f76464;
 
@@ -154,17 +154,20 @@ a.subtitle-devise {
 
 
 .sticky-top-blocknav {
-  top: 120px;
-  height: 80vh;
-  overflow-y: scroll;
-
+  top: 62px;
+  height: 60vh;
 }
-.sticky-top-blocknav::-webkit-scrollbar {
+
+.scrollbar__category {
+  height: 60vh;
+  overflow-y: scroll;
+}
+.scrollbar__category::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 10px;
 }
 
-.sticky-top-blocknav::-webkit-scrollbar-thumb {
+.scrollbar__category::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: rgba(0,0,0,.5);
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);

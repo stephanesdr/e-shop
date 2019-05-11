@@ -1,12 +1,12 @@
        <% if @item.discount == false %>
 
-          <h3 class="font-weight-light">
+          <h3 class="font-weight-light text-warning">
               <%= @item.price %>€
           </h3>
 
          <% else @item.discount == true %>
 
-         <h4 class="font-weight-light">
+         <h4 class="font-weight-light warning">
             <%= @item.price %>€
           <%= @item.reduced_price%> € (-
         <%= @item.percentage_discount %> %)

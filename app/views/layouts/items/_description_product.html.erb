@@ -1,21 +1,16 @@
-    <h2 class="font-weight-bold">
-      <%= @item.name %>
-    </h2>
-    <div class="h4 py-2">
-      <%= @item.description %>
-    </div>
-    <div class="content-product">
+<h2 class="font-weight-bold text-info">
+  <%= @item.name %>
+</h2>
+<div class="h4 py-2">
+  <%= @item.description %>
+</div>
+<div class="content-product">
 
-    <b class="font-weight-bold"> Effets :</b>
-      <p>Lorem ipsum dolo ksnfkqn sefokgokre</p>
+  <b class="font-weight-bold"> healing effects :</b>
+  <div class="">
 
-      <b class="font-weight-bold"> Compositions :</b>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      liquid architecto nisi iste reiciendis facere? Soluta sit optio illum laboriosam 
-      quia officiis saepe cupiditate voluptas earum hic?</p>
-    </div>
+    <%= @item.categories.alphabet.map { |category| 
+link_to(category.name, home_category_path(category.id), class: "text-warning") }.join(', ').html_safe %>
 
-
-
-
-
+  </div>
+</div>

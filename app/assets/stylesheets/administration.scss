@@ -1,7 +1,8 @@
 
 @import "template/main";
 @import "feathericon";
-
+@import "over_bootstrap";
+@import "button_effect";
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
@@ -10,18 +11,33 @@
     width: -moz-available;          /* WebKit-based browsers will ignore this. */
     width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
     width: fill-available;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .table-responsive {
     display: table;
 }
 
-.card-admin {
-    box-shadow: 10px 10px 0px 0px #127ba3;
+.admin-table {
+   font-size: xx-small;
+   font-weight: 300;
+   
 }
 
 .sidebar {
     width: 17vw;
     position: fixed;
     margin-top: 18px;
+}
+
+.sidebar-link {
+    color: #555555;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.sidebar-link:hover {
+    color: #f76464;
+    text-decoration: none;
+    font-weight: 700;
 }

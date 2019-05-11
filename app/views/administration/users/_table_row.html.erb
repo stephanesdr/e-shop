@@ -3,7 +3,7 @@
 		<td> <%= user.id %></td>
 		<td> <%= user.email %></td>
 		<td> <%= user.admin %></td>
-		<td><a href="<%= edit_administration_user_path(user.id) %>" class="">Editer</a></td>
-		<td><%= link_to "SUPPRIMER", administration_user_path(user.id), :method => :delete,  data: { confirm: 'Etes-vous sûr de vouloir supprimer cet utilisateur ?' } %>
+		<td><%= link_to "édit", edit_administration_user_path(user.id), class: "btn btn-info" %></td>
+		<td><%= link_to "delete", administration_user_path(user.id), class:"btn btn-warning", :method => :delete,  data: { confirm: 'Etes-vous sûr de vouloir supprimer cet utilisateur ?' } %>
 	</tr>
 <% end %>
