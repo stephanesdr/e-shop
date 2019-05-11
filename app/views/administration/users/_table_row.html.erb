@@ -1,9 +1,10 @@
 <%= form_for user, url: administration_user_url(user.id), html: {class: ""} do |f| %>
-	<tr>
-		<td> <%= user.id %></td>
-		<td> <%= user.email %></td>
-		<td> <%= user.admin %></td>
-		<td><%= link_to "édit", edit_administration_user_path(user.id), class: "btn btn-info" %></td>
-		<td><%= link_to "delete", administration_user_path(user.id), class:"btn btn-warning", :method => :delete,  data: { confirm: 'Etes-vous sûr de vouloir supprimer cet utilisateur ?' } %>
-	</tr>
+<tr>
+	<td> <%= user.id %></td>
+	<td> <%= user.email %></td>
+	<td><%= user.admin ? "Oui" : "Non" %></td>
+	<td><%= link_to "édit", edit_administration_user_path(user.id), class: "btn btn-info" %></td>
+	<td><%= link_to "delete", administration_user_path(user.id), class:"btn btn-warning", :method => :delete,  data: { confirm: 'Etes-vous sûr de vouloir supprimer cet utilisateur ?' } %>
+
+</tr>
 <% end %>

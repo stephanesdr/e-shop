@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Administration::OrdersController, type: :controller do
   # pending "add some examples to (or delete) #{__FILE__}"
-
+  login_admin
   describe "GET #index" do
     let(:order) { create(:order) }
 

@@ -3,13 +3,17 @@
 </div>
 
 <div class="card-group">
-	<% @items.each do |item| %>
-	
+	<% @items.order(:created_at).each do |item| %>
+
 	<div class="col-lg-4 col-md-6 mb-4">
 		<div class="card card-items product-grid">
 			<div class="product-image">
 				<%= link_to(home_item_path(item.id)) do %>
-				<img class="card-img-top" src="<%= image_url(item.image_url) %>" alt="<%= item.name %>" size="300">
+					<% if item.picture.attached? %>
+					  <%= image_tag item.picture, alt: 'picture', class: 'picture' %>
+					<% else %>
+					  <img class="card-img-top" src="<%= image_url(item.image_url) %>" alt="<%= item.name %>" size="300">
+					<% end %>
 				<% end %>
 
 				<ul class="social">

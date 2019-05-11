@@ -5,26 +5,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css">
     <%= stylesheet_link_tag 'administration', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="d-flex"><%= render partial: "layouts/administration/sidebar" %>
 
+    <div class="main">
 
-   <div class="d-flex"><%= render partial: "layouts/administration/sidebar" %>
-   
-   <div class="main">
-   
-   <main class="content">
-   <%= render partial: "layouts/administration/navbar" %>
-   <div class="container py-5">
-   <%= render "layouts/shared/flash_messages" %>
-   <%= yield %>
-   </div>
-   </main>
-   
-   </div></div>
+    <main class="content">
+      <%= render partial: "layouts/administration/navbar" %>
+      <div class="container py-5">
+        <%= render "layouts/shared/flash_messages" %>
+        <%= yield %>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.js"></script>
   </body>
 </html>
-

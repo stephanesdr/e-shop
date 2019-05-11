@@ -1,5 +1,21 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: items
+#
+#  id                  :bigint(8)        not null, primary key
+#  description         :text
+#  discount            :boolean          default(FALSE)
+#  image_url           :string           default("default-plant.jpg")
+#  name                :string
+#  percentage_discount :integer          default(0)
+#  price               :float
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  ahoy_visit_id       :bigint(8)
+#
+
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
