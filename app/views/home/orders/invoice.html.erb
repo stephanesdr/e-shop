@@ -34,9 +34,9 @@
     <div class="invoice-infos col">
       FACTURE #<%=@order.id%>
       <br>
-      DATE DE LA COMMANDE :<%= @order.created_at.asctime%>
+      DATE DE LA COMMANDE: <br><%= @order.created_at_french%>
       <br>
-      LIVRÉ LE :<%= @order.updated_at.asctime%>
+      LIVRÉ LE :  <br><%= @order.updated_at_french%>
     </div>
 
     </div>
