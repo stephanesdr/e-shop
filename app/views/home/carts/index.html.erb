@@ -43,7 +43,13 @@
 
         <% if !@cart.items.empty? %>
 
-        <h3><%= link_to "Passer à la page de payement", edit_home_payment_path(current_user.profile.id), method: "get" %></h3>
+
+
+        <h3 class="card-title text-white">
+          <%= link_to edit_home_payment_path(current_user.profile.id) , class: "cbutton cbutton--effect-ivana" , method: "get" do %>
+            <span class="font-weigh-bold btn btn-info">Passer à la page de payement</span>
+          <% end %>
+        </h3>
 
         <% end%>
 </div>
