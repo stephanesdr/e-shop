@@ -30,12 +30,4 @@ class Order < ApplicationRecord
   def order_confirmation
     UserMailer.order_email(self).deliver_now
   end
-
-  def created_at_french
-    year = format('%02d', created_at.year)
-    month = format('%02d', created_at.month)
-    day = format('%02d', created_at.day)
-    time = created_at.strftime("%Hh%M")
-    "#{day}/#{month}/#{year.to_s[2..3]} - #{time}"
-  end
 end
