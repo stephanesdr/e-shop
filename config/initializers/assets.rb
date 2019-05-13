@@ -16,6 +16,7 @@ Rails.application.config.assets.precompile += %w(checkout_cart.js)
 Rails.application.config.assets.precompile += %w(trigger_modernizr.js)
 Rails.application.config.assets.precompile += %w(modernizr.custom.js)
 Rails.application.config.assets.precompile += %w(administration/orders.css)
+Rails.application.config.assets.precompile += ['pdf.css']
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

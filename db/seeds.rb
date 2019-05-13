@@ -12,45 +12,45 @@ require 'faker'
 require 'csv'
 
 # == seed some users ==
-puts 'Seeding users...'
-1.upto(20) do |i|
-  email = Faker::Internet.email
-  next p "User already exist" if User.find_by(email: email)
-
-  User.create!(
-    email: email,
-    password: Faker::Internet.password(8),
-    confirmed_at: Time.zone.now,
-    created_at: Time.zone.now # rand(1.year.ago..Time.zone.now)
-  )
-  p "User #{i} : created"
-end
+# puts 'Seeding users...'
+# 1.upto(200) do |i|
+#   email = Faker::Internet.email
+#   next p "User already exist" if User.find_by(email: email)
+#
+#   User.create!(
+#     email: email,
+#     password: Faker::Internet.password(8),
+#     confirmed_at: Time.zone.now,
+#     created_at: Time.zone.now # rand(1.year.ago..Time.zone.now)
+#   )
+#   p "User #{i} : created"
+# end
 
 #  == seed profiles of users ==
-User.all.each do |user|
-  user.profile.update(city: Faker::Address.city,
-                      first_name: Faker::Name.first_name,
-                      last_name: Faker::Name.last_name,
-                      phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-                      postal_code: Faker::Address.postcode,
-                      street: Faker::Address.street_address)
-
-  p "Profile of user #{user.id} seeded"
-end
+# User.all.each do |user|
+#   user.profile.update(city: Faker::Address.city,
+#                       first_name: Faker::Name.first_name,
+#                       last_name: Faker::Name.last_name,
+#                       phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
+#                       postal_code: Faker::Address.postcode,
+#                       street: Faker::Address.street_address)
+#
+#   p "Profile of user #{user.id} seeded"
+# end
 
 # == seed an admin ==
-puts 'Seeding admin...'
-if !User.find_by(email: "admin@e-shop.com")
-  User.create!(
-    email: "admin@e-shop.com",
-    password: "superpassword",
-    confirmed_at: Time.zone.now,
-    admin: true
-  )
-  p "Admin created"
-else
-  p "Admin already exist"
-end
+# puts 'Seeding admin...'
+# if !User.find_by(email: "admin@e-shop.com")
+#   User.create!(
+#     email: "admin@e-shop.com",
+#     password: "superpassword",
+#     confirmed_at: Time.zone.now,
+#     admin: true
+#   )
+#   p "Admin created"
+# else
+#   p "Admin already exist"
+# end
 
 # == scrapping phytodata ==
 # Use of service scrap_phytodb.rb in app/services/
@@ -58,38 +58,38 @@ end
 # For only seed from csv file, just uncomment ScrapPhytodb.new and scrap.seed_from_csv
 
 # be carful which lign are comment or uncomment
-scrap = ScrapPhytodb.new(true)
-scrap.delete_items_categories
-scrap.perform
-scrap.seed_items_categories
-scrap.seed_image_url
-scrap.export_to_csv
-scrap.seed_from_csv("db/phyto_db_2019-05-01_23:54:22.csv")
+# scrap = ScrapPhytodb.new(false)
+# scrap.delete_items_categories
+# scrap.perform
+# scrap.seed_items_categories
+# scrap.seed_image_url
+# scrap.export_to_csv
+# scrap.seed_from_csv("db/phyto_db_2019-05-01_23:54:22.csv")
 # == -------------------- ==
 
 # == seed images ==
-puts '## Seed images.....................'
-file = "db/phyto_db_2019-05-01_23:54:22_images.csv"
-plant = []
-i = 0
-CSV.foreach(file, headers: true) do |row|
-  # 0: Name - # 1: Description - # 2: image_url - # 3: diseases
-  unless row[4].nil?
-    plant[i] = row[0]
-  end
-  i += 1
-end
+# puts '## Seed images.....................'
+# file = "db/phyto_db_2019-05-01_23:54:22_images.csv"
+# plant = []
+# i = 0
+# CSV.foreach(file, headers: true) do |row|
+#   # 0: Name - # 1: Description - # 2: image_url - # 3: diseases
+#   unless row[4].nil?
+#     plant[i] = row[0]
+#   end
+#   i += 1
+# end
 #
 # i = 0
-puts '## Seed image_url.....................'
-Item.all.each do |item|
-  url_image = plant[i] + ".jpg"
-  item.update(image_url: url_image)
-  i += 1
-  if i == plant.length - 1
-    i = 0
-  end
-end
+# puts '## Seed image_url.....................'
+# Item.all.each do |item|
+#   url_image = plant[i] + ".jpg"
+#   item.update(image_url: url_image)
+#   i += 1
+#   if i == plant.length - 1
+#     i = 0
+#   end
+# end
 #
 # # == seed oders ==
 # puts 'Seeding orders...'
