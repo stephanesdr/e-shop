@@ -1,28 +1,25 @@
+<h1 class="display-4 jumbo-title" align="center">Mon Panier </h1>
+
 <div class="container">
     <div class="row mt-5">
-        
+
         <table class="cart_check">
             <thead>
                 <tr>
-                    <th>Item</th>
-                    <th>QTY</th>
-                    <th>Price</th>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
                     <!--	<th>&nbsp;</th>-->
                 </tr>
             </thead>
             <tbody>
                 <% @cart_items.order(:created_at).each do |cart_item| %>
                 <tr>
-                    <td><%= cart_item.item.name %>
-                        <span>
-                            <% cart_item.item.categories.each do|cat| %>
-                            <%=cat.name %>
-                            <%end%>
-                        </span>
+                    <td><%= link_to(cart_item.item.name, home_item_path(cart_item.item.id)) %>
                     </td>
                     <td><%= form_for(cart_item, url: home_cart_item_path(cart_item.id), html: { method: :patch }) do |f| %>
                     <%= f.number_field :quantity, autocomplete: "quantity", class: "number_field", in: 1...10 %>
-                    <%= submit_tag "Éditer", class:"btn btn-info btn-sm" %>
+                    <%= submit_tag "Mettre à jour", class:"btn btn-info btn-sm" %>
                     <% end %></td>
                     <td class="price-<%=cart_item.id%>"><%= cart_item.price %> €</td>
                     <td>
