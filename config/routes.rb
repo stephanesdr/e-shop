@@ -14,7 +14,8 @@ Rails.application.routes.draw do
     resources :categories do
       resources :items, only: %i[index destroy]
     end
-
+    
+    resources :landing, only: %i[index destroy]
     resources :profiles
     resources :items, only: %i[index show] do
       resources :cart_items, only: %i[create]

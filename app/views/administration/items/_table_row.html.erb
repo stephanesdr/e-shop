@@ -1,11 +1,12 @@
-<div class="card card-admin my-3">
+
+<div class="my-3">
 
 	<input type="text" id="myInput" onkeyup="searchBarTables()" placeholder="Rechercher un produit par nom..." title="Rentrer un nom">
 
 	<div class="table-responsive">
 		<table id="myTable" data-toggle="table" class="table table-striped table-hover">
 			<thead>
-				<tr>
+				<tr class= "admin-table">
 					<th data-sortable="true" class="column-max-width">Id</th>
 					<th data-sortable="true" class="column-max-width">Nom</th>
 					<th data-sortable="true" class="column-max-width">Visites</th>
@@ -29,8 +30,8 @@
 					<td><%= item.discount ? "Oui" : "Non" %></td>
 					<td><%= item.percentage_discount %> %</td>
 					<td><%= item.reduced_price %> €</td>
-					<td><%= link_to "EDITER", edit_administration_item_path(item.id) %></td>
-					<td><%= link_to "SUPPRIMER", administration_item_path(item.id), :method => :delete,  data: { confirm: 'Etes-vous sûr de vouloir supprimer ce produit de votre stock ?' } %>
+					<td><%= link_to "EDITER", edit_administration_item_path(item.id), class:"btn-info btn" %></td>
+					<td><%= link_to "SUPPRIMER", administration_item_path(item.id), class:"btn-warning btn" , :method => :delete,  data: { confirm: 'Etes-vous sûr de vouloir supprimer ce produit de votre stock ?' } %>
 					</td>
 				</tr>
 				<% end%>

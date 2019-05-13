@@ -42,10 +42,10 @@
 			</div>
 			<div class="card-body product-content pt-4">
 				<h4 class="card-title">
-					<%= link_to(item.name, home_item_path(item.id)) %>
+					<%= link_to item.name, home_item_path(item.id), class: "text-info" %>
 				</h4>
 				<% if item.discount == false %>
-				<div class="price">
+				<div class="price px-3 text-warning">
 					<%= item.price%> €
 				</div>
 				<% else %>
@@ -54,6 +54,7 @@
 						<span><%= item.price%> €</span>
 				</div>
 				<% end %>
+
 				<div class="card-footer category-div">
 					<small class="text-muted">
 						<% item.categories.each do|cat| %>

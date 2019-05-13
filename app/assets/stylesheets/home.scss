@@ -6,7 +6,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,700);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,500,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700);
 
 $warning: #f76464;
 
@@ -14,7 +14,7 @@ $warning: #f76464;
   color: $warning;
 }
 
-body { background-color: whitesmoke;}
+
 .main {
   width: 100%;
   width: -moz-available;
@@ -33,7 +33,7 @@ body,
 html {
   height: 100%;
   overflow-x: hidden;
-  background-color: #fcfcfc;
+  background-color: whitesmoke;
 }
 
 a {
@@ -91,6 +91,22 @@ input {
   text-align: center;
 }
 
+.input-profile {
+
+  font-size: 1.3em;
+    color: #767575;
+    border: 0;
+    border-bottom: 1px solid #f5f5f5;
+    font-family: inherit;
+    border-radius: 0;
+    padding: 0;
+    cursor: text;
+    text-align: left;
+    width: 100%;
+    box-shadow: 2px 7px 10px -5px whitesmoke;
+
+}
+
 input:focus {
   outline: 0;
   border-bottom: 1px solid #666;
@@ -138,17 +154,20 @@ a.subtitle-devise {
 
 
 .sticky-top-blocknav {
-  top: 120px;
-  height: 80vh;
-  overflow-y: scroll;
-
+  top: 62px;
+  height: 60vh;
 }
-.sticky-top-blocknav::-webkit-scrollbar {
+
+.scrollbar__category {
+  height: 60vh;
+  overflow-y: scroll;
+}
+.scrollbar__category::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 10px;
 }
 
-.sticky-top-blocknav::-webkit-scrollbar-thumb {
+.scrollbar__category::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: rgba(0,0,0,.5);
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
@@ -179,7 +198,7 @@ a.subtitle-devise {
   height: 81%;
   width: 100%;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, .1);
+  // border: 1px solid rgba(0, 0, 0, .1);
   opacity: 0;
   position: absolute;
   top: 0;
@@ -191,7 +210,7 @@ a.subtitle-devise {
 .product-grid:hover:before {
   opacity: 1;
   height: 100%;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  // box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
 .product-grid .product-image {

@@ -1,0 +1,30 @@
+<div>
+    <% @cart.items.each do |item| %>
+        <p> <%= item.name %> <%= item.price %></p>
+    <% end %>
+    <p>Total : <%= @amount %></p>
+</div>
+
+<%= form_tag home_orders_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description= <%=Time.now %>
+          data-amount=  <%=@amount%>
+          data-locale= "auto"
+          data-currency= "eur"
+          data-email = <%=@user.email%> > </script>
+           <script>
+        // Hide default stripe button, be careful there if you
+        // have more than 1 button of that class
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+    </script>
+    <button type="submit" class="btn-info btn btn-lg">Paiement</button>
+  <%end %>
